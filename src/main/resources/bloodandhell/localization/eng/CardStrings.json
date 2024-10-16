@@ -1,0 +1,172 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:MyCard": {
+    "NAME": "Première élue",
+    "DESCRIPTION": "Gagnez !B! d'Armure. Infligez !D! dégâts.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:HeroicStrike": {
+    "NAME": "Heroic Strike",
+    "DESCRIPTION": "Deal !D! damage. NL All Heroic Strike cards deal !M! more damage this combat."
+  },
+  "${modID}:NotToday": {
+    "NAME": "Not Today",
+    "DESCRIPTION": "Retain. NL Gain !B! Block."
+  },
+  "${modID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:SacrificialBlade": {
+    "NAME": "Sacrificial Blade",
+    "DESCRIPTION": "Lose 1 HP. NL Deal !D! damage."
+  },
+  "${modID}:Bloodiness": {
+    "NAME": "Bloodiness",
+    "DESCRIPTION": "Lose !${modID}:HPLost! HP. NL Deal !D! damage !M! times."
+  },
+  "${modID}:EternalAegis": {
+    "NAME": "Eternal Aegis",
+    "DESCRIPTION": "Lose !${modID}:HPLost! HP. NL Prevent the next !M! times you would lose HP."
+  },
+  "${modID}:PropheticWritings": {
+    "NAME": "Prophetic Writings",
+    "DESCRIPTION": "Lose 1 HP. NL Draw cards until you have !M! in hand."
+  },
+  "${modID}:CollateralDamage": {
+    "NAME": "Collateral Damage",
+    "DESCRIPTION": "Whenever you lose HP during your turn, deal !M! damage to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you lose HP during your turn, deal !M! damage to a random enemy."
+  },
+  "${modID}:Injury": {
+    "NAME": "Injury",
+    "DESCRIPTION": "Lose 1HP, do this action 3 times. NL Heal !M! HP"
+  },
+  "${modID}:Regeneration": {
+    "NAME": "Regeneration",
+    "DESCRIPTION": "Whenever you lose HP during your turn, heal 1 HP."
+  },
+  "${modID}:FacingDestiny": {
+    "NAME": "Facing Destiny",
+    "DESCRIPTION": "Your HP is 1. NL You can't take damage during 2 turns. NL At the end of the combat, Heal !M! HP."
+  },
+  "${modID}:Cheese": {
+    "NAME": "Cheese",
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
+  },
+  "${modID}:BloodyArmor": {
+    "NAME": "Bloody Armor",
+    "DESCRIPTION": "Lose 1 HP. Gain 5 armor. Do these actions !M! times."
+  },
+  "${modID}:ColdBlood": {
+    "NAME": "Cold Blood",
+    "DESCRIPTION": "Gain !B! Block. If you have received damage this turn, Heal !M!."
+  },
+  "${modID}:OutburstOfAnger": {
+    "NAME": "Outburst of Anger",
+    "DESCRIPTION": "Deal !D! damage to ALL ennemies. Damage equal to the HP lost this combat."
+  },
+  "${modID}:NoOneWillPass": {
+    "NAME": "No One Will Pass",
+    "DESCRIPTION": "Whenever you lose HP during your turn, gain !M! Block."
+  },
+  "${modID}:Surpassing": {
+    "NAME": "Surpassing",
+    "DESCRIPTION": "Whenever you lose HP during your turn, gain 1 temporary Strength.",
+    "UPGRADE_DESCRIPTION": "Whenever you lose HP during your turn, gain 1 temporary Strength and 1 temporary Dexterity."
+  },
+  "${modID}:BloodyStrike": {
+    "NAME": "Bloody Strike",
+    "DESCRIPTION": "Lose 1HP. Deal !D! damage. Draw 1 card. NL If you have received damage this turn, Gain [E]"
+  },
+  "${modID}:Feast": {
+    "NAME": "Feast",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. If Fatal, heal !M! HP."
+  },
+  "${modID}:AllInOne": {
+    "NAME": "All in One",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Heal 4 HP. NL Gain 10 Gold. Exhaust."
+  },
+  "${modID}:Void": {
+    "NAME": "Void",
+    "DESCRIPTION": "Deal X damage to an enemy. X equal your missing HP ÷ !M!."
+  },
+  "${modID}:ThirstForPower": {
+    "NAME": "Thirst for Power",
+    "DESCRIPTION": "Add a random Power to your hand. Lose HP equal to its cost, then set its cost to 0 this turn. NL Exhaust."
+  },
+  "${modID}:Choice": {
+    "NAME": "Choice",
+    "DESCRIPTION": "Choose : Deal !D! damage to a random enemy or Gain !B! Block."
+  },
+  "${modID}:StrikeNow": {
+    "NAME": "Strike Now",
+    "DESCRIPTION": "Deal !M! damage to a random enemy."
+  },
+  "${modID}:DefendNow": {
+    "NAME": "Defend Now",
+    "DESCRIPTION": "Gain !M! Block."
+  },
+  "${modID}:Cloning": {
+    "NAME": "Cloning",
+    "DESCRIPTION": "Create !M! copy of the last card you played and put it in your hand."
+  },
+  "${modID}:Unsheathe": {
+    "NAME": "Unsheathe",
+    "DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as its cost.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as its cost +1"
+  },
+  "${modID}:Bet": {
+    "NAME": "Bet",
+    "DESCRIPTION": "Draw 1 card. If it's upgraded, gain !M! Strength. Else, upgrade it."
+  },
+  "${modID}:Assault": {
+    "NAME": "Assault",
+    "DESCRIPTION": "Play the top card of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Upgrade the top card of your draw pile and play it."
+  },
+  "${modID}:EmergencyAssault": {
+    "NAME": "Emergency Assault",
+    "DESCRIPTION": "Play the 3 top cards of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Upgrade the 3 top cards of your draw pile and play them."
+  },
+  "${modID}:LeaveItToFate": {
+    "NAME": "Leave it to Fate",
+    "DESCRIPTION": "Randomly increase or decrease the cost of each card in your hand by 1. NL !M! chances out of 10 to reduce the cost"
+  },
+  "${modID}:Avarice": {
+    "NAME": "Avarice",
+    "DESCRIPTION": "Lose 1HP, Heal !M! HP, Gain 1 [E], X times. NL Exhaust."
+  },
+  "${modID}:Correction": {
+    "NAME": "Correction",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
+  },
+  "${modID}:Saga": {
+    "NAME": "Saga",
+    "DESCRIPTION": "Lose 2HP. Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Lose 2HP. Draw !M! cards."
+
+  },
+  "${modID}:HeroicDefend": {
+    "NAME": "Heroic Defend",
+    "DESCRIPTION": "Gain !B! Block. NL All Heroic Defend cards grant !M! more Block this combat."
+  }
+}

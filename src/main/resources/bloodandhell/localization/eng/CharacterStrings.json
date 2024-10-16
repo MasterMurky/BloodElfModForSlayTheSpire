@@ -1,0 +1,13 @@
+{
+  "${modID}:Tormented": {
+    "NAMES": [
+      "Le Tourmenté",
+      "le Tourmenté"
+    ],
+    "TEXT": [
+      "Une âme en peine hantée par ses sombres pensées. NL Désormais au pied de la tour en quête de rédemption.",
+      " NL Est-ce que tout ceci a du sens..?",
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~lost~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+    ]
+  }
+}
