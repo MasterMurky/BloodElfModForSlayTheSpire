@@ -13,7 +13,7 @@ The mod will be available on the Steam Workshop. I will add the link once it is 
 ---
 
 ## Credits
-- [Alchyr](https://github.com/Alchyr) : Creator of the BaseMod, which served as the foundation for this mod.
+- [Alchyr](https://github.com/Alchyr) : Creator of the Basic Mod, which served as the foundation for this mod.
 - [bing.com/images/create](https://www.bing.com/images/create) (DALL-E) : For generating the illustrations of the cards.
 
 ---
