@@ -48,7 +48,7 @@ public class Void extends BaseCard {
     public void applyPowers(){
         AbstractPlayer p = AbstractDungeon.player;
         int nb_damage = (p.maxHealth - p.currentHealth) / this.magicNumber;
-        this.rawDescription = "Deal (\" + nb_damage + \") damage to an enemy. Damage equal your missing HP ÷ !M!. ";
+        this.rawDescription = "Deal (" + nb_damage + ") damage to an enemy. Damage equal your missing HP ÷ !M!. ";
         initializeDescription();
 
     }

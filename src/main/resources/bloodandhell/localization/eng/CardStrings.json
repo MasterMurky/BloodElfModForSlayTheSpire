@@ -9,15 +9,6 @@
       "Blizzard is a good example for this."
     ]
   },
-  "${modID}:MyCard": {
-    "NAME": "Première élue",
-    "DESCRIPTION": "Gagnez !B! d'Armure. Infligez !D! dégâts.",
-    "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
-    ]
-  },
   "${modID}:HeroicStrike": {
     "NAME": "Heroic Strike",
     "DESCRIPTION": "Deal !D! damage. NL All Heroic Strike cards deal !M! more damage this combat."
@@ -106,7 +97,10 @@
   },
   "${modID}:Void": {
     "NAME": "Void",
-    "DESCRIPTION": "Deal X damage to an enemy. X equal your missing HP ÷ !M!."
+    "DESCRIPTION": "Deal X damage to an enemy. X equal your missing HP ÷ !M!.",
+    "EXTENDED_DESCRIPTION": [
+      "Damages are rounded down."
+    ]
   },
   "${modID}:ThirstForPower": {
     "NAME": "Thirst for Power",
