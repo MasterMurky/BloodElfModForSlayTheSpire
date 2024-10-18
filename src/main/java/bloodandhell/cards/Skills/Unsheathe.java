@@ -23,17 +23,14 @@ public class Unsheathe extends BaseCard {
             1
     );
 
-    private static final int MN = 0;
-    private static final int UPG_MN = 1;
+    private static final int UPGRADE_BONUS_STRENGTH = 1;
 
     public Unsheathe() {
         super(ID, info);
-        setMagic(MN, UPG_MN);  // Initialisation du magicNumber ici
     }
 
     public Unsheathe(String ID, CardStats info) {
         super(ID, info);
-        setMagic(MN, UPG_MN);
     }
 
     @Override
@@ -43,12 +40,18 @@ public class Unsheathe extends BaseCard {
             @Override
             public void update() {
                 AbstractCard drawnCard = AbstractDungeon.player.hand.getTopCard();
-                int cardCost = drawnCard.costForTurn; // Récupère le coût de la carte piochée
+                int cardCost = drawnCard.costForTurn;
 
-                // Applique de la force temporaire égale au coût de la carte piochée + magicNumber
+                int strengthToApply = cardCost;
+
+                // +1 if Upgraded
+                if (Unsheathe.this.upgraded) {
+                    strengthToApply += 1;
+                }
+
                 if (cardCost > 0) {
-                    addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, (cardCost + Unsheathe.this.magicNumber)), cardCost));
-                    addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, (cardCost + Unsheathe.this.magicNumber)), cardCost));
+                    addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strengthToApply), strengthToApply));
+                    addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, strengthToApply), strengthToApply));
                 }
 
                 isDone = true;

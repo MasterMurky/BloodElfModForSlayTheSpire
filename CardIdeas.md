@@ -15,7 +15,7 @@
 * infliger X(Y) dégâts à un ennemi. Se soigne de la moitié des dégâts infligés.
 * ~~0 : perdre 2PV, piocher une(2) carte.~~
 * 1 - Apothéose : Si vous avez subi des dégâts 3X pendant ce tour, inflige 12(15) dégâts à tous les ennemis.
-
+* Si t'es affaibli, inflige + de dégâts.
 
 
 ## Buffs temporaires et annulation de l'effet temporaire
