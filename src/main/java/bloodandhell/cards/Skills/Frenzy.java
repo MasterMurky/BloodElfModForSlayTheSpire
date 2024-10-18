@@ -1,0 +1,3 @@
+// ...
+
+//     "DESCRIPTION": "Unplayable. NL When you have received 3 or more damage during your turn : Heal 5(8) and gain [E]."

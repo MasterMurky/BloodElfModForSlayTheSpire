@@ -163,10 +163,25 @@
     "NAME": "Saga",
     "DESCRIPTION": "Lose 2HP. Draw !M! card.",
     "UPGRADE_DESCRIPTION": "Lose 2HP. Draw !M! cards."
-
   },
   "${modID}:HeroicDefend": {
     "NAME": "Heroic Defend",
     "DESCRIPTION": "Gain !B! Block. NL All Heroic Defend cards grant !M! more Block this combat."
+  },
+  "${modID}:Frenzy": {
+    "NAME": "Frenzy",
+    "DESCRIPTION": "Unplayable. NL When you have received 3 or more damage during your turn : Heal !M! and gain [E]."
+  },
+  "${modID}:Purification": {
+    "NAME": "Purification",
+    "DESCRIPTION": "Remove all Debuffs."
+  },
+  "${modID}:Redemption": {
+    "NAME": "Redemption",
+    "DESCRIPTION": "..."
+  },
+  "${modID}:Backlash": {
+    "NAME": "Backlash",
+    "DESCRIPTION": "Deal !D! damage. Gain 1 Weak and 1 Vulnerable."
   }
 }

@@ -9,14 +9,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Correction extends BaseCard {
-    public static final String ID = makeID(Correction.class.getSimpleName());
+public class Backlash extends BaseCard {
+    public static final String ID = makeID(Backlash.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Enums.CARD_COLOR,
             CardType.ATTACK,
@@ -25,35 +24,33 @@ public class Correction extends BaseCard {
             1
     );
 
-    private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADE_DAMAGE = 5;
+    private static final int WEAK_VULNERABLE_TURNS = 1;
 
-    private static final int MN = 1;
-    private static final int UPG_MN = 1;
-
-    public Correction() {
+    public Backlash() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MN, UPG_MN);
+        setDamage(DAMAGE, UPGRADE_DAMAGE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToTop(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+
+        addToBot(new ApplyPowerAction(p, p, new WeakPower(p, WEAK_VULNERABLE_TURNS, false), WEAK_VULNERABLE_TURNS));
+        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, WEAK_VULNERABLE_TURNS, false), WEAK_VULNERABLE_TURNS));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);
-            upgradeMagicNumber(UPG_MN);
+            upgradeDamage(UPGRADE_DAMAGE);  // Augmentation des dégâts à 17 lors de l'amélioration
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Correction();
+        return new Backlash();
     }
 }
