@@ -39,7 +39,7 @@ public class Strike extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL)); //(1er paramètre = la cible à laquelle infliger des dégâts), DamageInfo (source des dégâts, amount et type de dégâts)
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE)); //(1er paramètre = la cible à laquelle infliger des dégâts), DamageInfo (source des dégâts, amount et type de dégâts)
                                                                                                                                                 //types de dégâts : NORMAL, THORNS, and HP_LOSS. Attacks deal NORMAL damage. Any blockable damage that isn't from an attack is THORNS damage (such as from Thorns). Damage that ignores block is HP_LOSS.
     }
 

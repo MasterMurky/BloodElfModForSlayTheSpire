@@ -135,17 +135,17 @@
   },
   "${modID}:Bet": {
     "NAME": "Bet",
-    "DESCRIPTION": "Draw 1 card. If it's upgraded, gain !M! Strength. Else, upgrade it."
+    "DESCRIPTION": "Draw 1 card. If it's upgraded, gain !M! Strength. Else, upgrade it for the rest of combat."
   },
   "${modID}:Assault": {
     "NAME": "Assault",
     "DESCRIPTION": "Play the top card of your draw pile.",
-    "UPGRADE_DESCRIPTION": "Upgrade the top card of your draw pile and play it."
+    "UPGRADE_DESCRIPTION": "Upgrade the top card of your draw pile for the rest of combat and play it."
   },
   "${modID}:EmergencyAssault": {
     "NAME": "Emergency Assault",
     "DESCRIPTION": "Play the 3 top cards of your draw pile.",
-    "UPGRADE_DESCRIPTION": "Upgrade the 3 top cards of your draw pile and play them."
+    "UPGRADE_DESCRIPTION": "Upgrade the 3 top cards of your draw pile for the rest of combat and play them."
   },
   "${modID}:LeaveItToFate": {
     "NAME": "Leave it to Fate",
@@ -170,7 +170,8 @@
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Unplayable. NL When you have received 3 or more damage during your turn : Heal !M! and gain [E]."
+    "DESCRIPTION": "Can only be played if you have taken 3 or more damage during your turn. NL Gain [E]",
+    "UPGRADE_DESCRIPTION": "Can only be played if you have taken 3 or more damage during your turn. NL Gain [E] [E]"
   },
   "${modID}:Purification": {
     "NAME": "Purification",
