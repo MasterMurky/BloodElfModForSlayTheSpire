@@ -79,8 +79,8 @@
     "NAME": "Cold Blood",
     "DESCRIPTION": "Gain !B! Block. If you have received damage this turn, Heal !M!."
   },
-  "${modID}:OutburstOfAnger": {
-    "NAME": "Outburst of Anger",
+  "${modID}:MagicWave": {
+    "NAME": "Magic Wave",
     "DESCRIPTION": "Deal !D! damage to ALL ennemies. Damage equal to the HP lost this combat."
   },
   "${modID}:NoOneWillPass": {
