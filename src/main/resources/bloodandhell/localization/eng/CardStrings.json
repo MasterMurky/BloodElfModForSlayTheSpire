@@ -178,5 +178,9 @@
   "${modID}:Backlash": {
     "NAME": "Backlash",
     "DESCRIPTION": "Deal !D! damage. Gain 1 Weak and 1 Vulnerable."
+  },
+  "${modID}:Pilgrimage": {
+    "NAME": "Pilgrimage",
+    "DESCRIPTION": "Remove all Debuffs at the end of your next turn."
   }
 }

@@ -11,7 +11,7 @@
 * Acceptation du destin : perso qui ouvre grand les bras et qui s'apprête à mourir brûlé--> se met à 1 PV mais ne peut pas mourir pendant 2 tours, se heal de X à la fin du combat
 * ~~inflige 1 dégât à ton perso, 4 à un ennemi aléatoire et te rend 1 PP (amelioré : et pioche 1 carte?) si t as déjà subi 1 dégât ce tour.~~
 * ~~Prend 1 dégât 3X, heal de 5 (7)~~
-* carte injouable qui s'active lorsque tu perds X PV pendant ton tour. Genre 5.
+* ~~carte injouable qui s'active lorsque tu perds X PV pendant ton tour. Genre 5.~~
 * infliger X(Y) dégâts à un ennemi. Se soigne de la moitié des dégâts infligés.
 * ~~0 : perdre 2PV, piocher une(2) carte.~~
 * 1 - Apothéose : Si vous avez subi des dégâts 3X pendant ce tour, inflige 12(15) dégâts à tous les ennemis.
@@ -60,7 +60,7 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 * mana de la création : image : la main pleine de mana
 * tir à retardement : au début du prochain tour, inflige X dégâts à tous les ennemis. Genre tir de barrage (flèches)
 * S'en remettre au destin : 0 : augmente ou diminue le coût de chaque carte dans ta main de 1 aléatoirement
-
+* carte qui a un effet si jouée pour 1, un effet amélioré si jouée pour 2 et 3.
 
 
 
