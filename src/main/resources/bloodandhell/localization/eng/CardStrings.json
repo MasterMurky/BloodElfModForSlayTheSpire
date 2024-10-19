@@ -190,5 +190,9 @@
   "${modID}:DoubleImpact": {
     "NAME": "Double Impact",
     "DESCRIPTION": "All Attacks you play this turn are played twice."
+  },
+  "${modID}:Riptide": {
+    "NAME": "Riptide",
+    "DESCRIPTION": "Deal !D! damage to ALL ennemies !M! times."
   }
 }
