@@ -30,14 +30,11 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 * carte qui te donne autant de force que la force temporaire que tu as actuellement. calculer la force actuelle moins le débuff de force temporaire.
 
 
-[Regeneration.java](src%2Fmain%2Fjava%2Fbloodandhell%2Fcards%2FPowers%2FRegeneration.java)
-
 
 
 ## Jouer tout le temps la même carte et survivre
-* 1 - mets dans votre main une (2) copie de la dernière carte que vous avez joué, la copie prend épuisement. éthéré & épuisement
-* 1 - transforme cette carte en une copie d'une carte de ta défausse (défausse ou pioche)
-* la même chose que la carte qui commence à 0 et augmente les dégâts mais pour l'armure/ les cartes piochées ?
+* ~~1 - mets dans votre main une (2) copie de la dernière carte que vous avez joué, la copie prend épuisement. éthéré & épuisement~~
+* ~~1 - transforme cette carte en une copie d'une carte de ta défausse (défausse ou pioche)~~
 * une carte qui se dédouble quand tu la pioches : comme endless agony (jeu de base)
 
 
@@ -46,20 +43,20 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 
 
 ## Trucs randoms / Sans catégorie
-* checker la carte "Blizzard" pour la carte qui met des dégâts qui valent le nbr de PV manquants /4
+* ~~checker la carte "Blizzard" pour la carte qui met des dégâts qui valent le nbr de PV manquants /4~~
 * rendre inné le pouvoir de shield lié à la perte de PV et celui des dégâts.
 * carte blood 4 blood
-* carte choix : shield ou atk ennemi (random?) (voir carte existante Wish)
+* ~~carte choix : shield ou atk ennemi (random?) (voir carte existante Wish)~~
 * carte de cout X
 * ~~petits plaisirs/tout en un : 2 - draw 1, inflige 6(9) dégâts à un ennemi aléatoire, gagne 5/8 d'armure, soigne de 4, gagne 10 d'or. épuisement~~
 * 1 - Creux intérieur (personnage avec creux noir genre trou au milieu de son corps ) : inflige des dégâts à un ennemi équivalents à ses PV manquants divisés par 5 (4) - maximum de 30 dégâts (pour éviter les abus sur le coeur par exemple)
-* joue les cartes du haut de son paquet genre les 2 (3) du dessus - mesures d'extrême urgence 
+* ~~joue les cartes du haut de son paquet genre les 2 (3) du dessus - mesures d'extrême urgence~~
 * Sacrement d'un roi (?) nom stylé xD - gagne 10 d'or et le statut couronné : chaque ennemi tué pendant le combat donne 5 d'or. couronne qui descend sur la tête comme effet visuel + bruit de trompettes
 * Code moral écarlate --> vanish une carte de sa main et .. ?
 * La fin de l'hiver
 * mana de la création : image : la main pleine de mana
 * tir à retardement : au début du prochain tour, inflige X dégâts à tous les ennemis. Genre tir de barrage (flèches)
-* S'en remettre au destin : 0 : augmente ou diminue le coût de chaque carte dans ta main de 1 aléatoirement
+* ~~S'en remettre au destin : 0 : augmente ou diminue le coût de chaque carte dans ta main de 1 aléatoirement~~
 * carte qui a un effet si jouée pour 1, un effet amélioré si jouée pour 2 et 3.
 
 

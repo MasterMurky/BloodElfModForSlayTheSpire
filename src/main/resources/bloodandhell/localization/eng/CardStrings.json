@@ -120,7 +120,7 @@
   },
   "${modID}:Cloning": {
     "NAME": "Cloning",
-    "DESCRIPTION": "Create !M! copy of the last card you played and put it in your hand."
+    "DESCRIPTION": "Create !M! copies of the last card you played and put them in your hand. NL Exhaust."
   },
   "${modID}:Unsheathe": {
     "NAME": "Unsheathe",
@@ -181,6 +181,14 @@
   },
   "${modID}:Pilgrimage": {
     "NAME": "Pilgrimage",
-    "DESCRIPTION": "Remove all Debuffs at the end of your next turn."
+    "DESCRIPTION": "Remove all Debuffs at the end of your next turn. NL Exhaust."
+  },
+  "${modID}:WarTactics": {
+    "NAME": "War Tactics",
+    "DESCRIPTION": "Gain !B! Block. NL Place a card from your discard pile on top of your draw pile."
+  },
+  "${modID}:DoubleImpact": {
+    "NAME": "Double Impact",
+    "DESCRIPTION": "All Attacks you play this turn are played twice."
   }
 }

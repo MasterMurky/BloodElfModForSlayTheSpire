@@ -2,43 +2,45 @@ package bloodandhell.cards.Skills;
 
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
-import bloodandhell.powers.PilgrimagePower;
+import bloodandhell.powers.DoubleImpactPower;
 import bloodandhell.util.CardStats;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Pilgrimage extends BaseCard {
-    public static final String ID = makeID(Pilgrimage.class.getSimpleName());
+public class DoubleImpact extends BaseCard {
+    public static final String ID = makeID(DoubleImpact.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            1
+            2
     );
 
-    public Pilgrimage() {
+    public DoubleImpact() {
         super(ID, info);
-        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Appliquer PilgrimagePower pour 1 tour
-        addToBot(new ApplyPowerAction(p, p, new PilgrimagePower(p, 1), 1));
+        boolean affectsSkills = this.upgraded;
+        addToBot(new ApplyPowerAction(p, p, new DoubleImpactPower(p, 1, affectsSkills), 1));
     }
 
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0); // Réduire le coût à 0 une fois amélioré
+            this.rawDescription = "All Attacks and Spells you play this turn are played twice.";
+            initializeDescription();
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Pilgrimage();
+        return new DoubleImpact();
     }
 }

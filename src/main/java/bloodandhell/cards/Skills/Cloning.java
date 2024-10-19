@@ -21,7 +21,7 @@ public class Cloning extends BaseCard {
     );
 
 
-    private static final int MN = 1;
+    private static final int MN = 2;
     private static final int UPG_MN = 1;
 
 
