@@ -194,5 +194,14 @@
   "${modID}:Riptide": {
     "NAME": "Riptide",
     "DESCRIPTION": "Deal !D! damage to ALL ennemies !M! times."
+  },
+  "${modID}:Exposure": {
+    "NAME": "Exposure",
+    "DESCRIPTION": "Deal !D! damage. Gain 2 Fragile."
+  },
+  "${modID}:StrategicStrikes": {
+    "NAME": "Strategic Strikes",
+    "DESCRIPTION": "Each time you play a card containing \"Strike\", Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Each time you play a card containing \"Strike\", Draw !M! cards."
   }
 }
