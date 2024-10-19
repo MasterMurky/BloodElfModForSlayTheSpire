@@ -3,57 +3,54 @@ package bloodandhell.cards.Skills;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.UpgradeSpecificCardAction;
+import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Replenishment extends BaseCard {
     public static final String ID = makeID(Replenishment.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            MyCharacter.Enums.CARD_COLOR,
-            CardType.SKILL,
-            CardRarity.COMMON,
-            CardTarget.SELF,
-            1 // Cost of the card
+            MyCharacter.Enums.CARD_COLOR, // La couleur de la carte, spécifique à ton personnage
+            CardType.SKILL, // Type de la carte (Attaque, Compétence, Pouvoir)
+            CardRarity.UNCOMMON, // Rareté (Commun, Peu commun, Rare)
+            CardTarget.SELF, // La cible (soi-même ici)
+            1 // Coût de la carte
     );
-
-    // Constants for the magic number and its upgrade
-    private static final int MN = 3; // Base amount of strength to gain
-    private static final int UPG_MN = 1; // Increment of strength when the card is upgraded
 
     public Replenishment() {
         super(ID, info);
-        setMagic(MN, UPG_MN); // Set the magic number (strength gained) and upgrade increment
-        this.exhaust = true;  // The card will exhaust after being played
-    }
-
-    public Replenishment(String ID, CardStats info) {
-        super(ID, info);
+        this.magicNumber = this.baseMagicNumber = 2; // Définit la quantité de cartes piochées (2 cartes)
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Draw 1 card
-        addToBot(new DrawCardAction(1, new AbstractGameAction() {
+        // Pioche 2 cartes
+        addToBot(new DrawCardAction(this.magicNumber, new HandCheckAction() {
             @Override
             public void update() {
-                // Check if a card was drawn
-                if (DrawCardAction.drawnCards.size() > 0) {
-                    AbstractCard drawnCard = DrawCardAction.drawnCards.get(0);
+                // Rafraîchit la main après la pioche
+                AbstractDungeon.player.hand.refreshHandLayout();
 
-                    // If the drawn card is upgraded, gain strength based on the magic number
-                    if (drawnCard.upgraded) {
-                        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
-                    } else {
-                        // If not upgraded, upgrade the drawn card
-                        addToBot(new UpgradeSpecificCardAction(drawnCard));
+                // Si la carte n'est pas améliorée, on ne réduit le coût que d'une seule carte "Defend"
+                if (!upgraded) {
+                    for (AbstractCard card : p.hand.group) {
+                        if (card.name.contains("Defend") && !card.freeToPlayOnce) {
+                            card.freeToPlayOnce = true; // Réduit le coût à 0 jusqu'à ce qu'elle soit jouée
+                            break;
+                        }
+                    }
+                } else {
+                    // Si la carte est améliorée, on réduit le coût de toutes les cartes "Defend"
+                    for (AbstractCard card : p.hand.group) {
+                        if (card.name.contains("Defend") && !card.freeToPlayOnce) {
+                            card.freeToPlayOnce = true;
+                        }
                     }
                 }
+
                 this.isDone = true;
             }
         }));
@@ -62,9 +59,7 @@ public class Replenishment extends BaseCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName(); // Upgrade the card's name
-            upgradeMagicNumber(UPG_MN); // Increase the magic number when the card is upgraded
-            this.exhaust = false; // When upgraded, the card no longer exhausts
+            upgradeName();
         }
     }
 
