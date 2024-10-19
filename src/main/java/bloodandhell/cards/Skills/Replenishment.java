@@ -13,37 +13,35 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Replenishment extends BaseCard {
     public static final String ID = makeID(Replenishment.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            MyCharacter.Enums.CARD_COLOR, // La couleur de la carte, spécifique à ton personnage
-            CardType.SKILL, // Type de la carte (Attaque, Compétence, Pouvoir)
-            CardRarity.UNCOMMON, // Rareté (Commun, Peu commun, Rare)
-            CardTarget.SELF, // La cible (soi-même ici)
-            1 // Coût de la carte
+            MyCharacter.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1
     );
 
     public Replenishment() {
         super(ID, info);
-        this.magicNumber = this.baseMagicNumber = 2; // Définit la quantité de cartes piochées (2 cartes)
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Pioche 2 cartes
         addToBot(new DrawCardAction(this.magicNumber, new HandCheckAction() {
             @Override
             public void update() {
-                // Rafraîchit la main après la pioche
                 AbstractDungeon.player.hand.refreshHandLayout();
 
-                // Si la carte n'est pas améliorée, on ne réduit le coût que d'une seule carte "Defend"
+                // Only 1
                 if (!upgraded) {
                     for (AbstractCard card : p.hand.group) {
                         if (card.name.contains("Defend") && !card.freeToPlayOnce) {
-                            card.freeToPlayOnce = true; // Réduit le coût à 0 jusqu'à ce qu'elle soit jouée
+                            card.freeToPlayOnce = true;
                             break;
                         }
                     }
                 } else {
-                    // Si la carte est améliorée, on réduit le coût de toutes les cartes "Defend"
+                    // All of them (no break)
                     for (AbstractCard card : p.hand.group) {
                         if (card.name.contains("Defend") && !card.freeToPlayOnce) {
                             card.freeToPlayOnce = true;

@@ -208,6 +208,9 @@
     "NAME": "Replenishment",
     "DESCRIPTION": "Draw 2 cards. NL One card containing \"Defend\" in your hand costs 0 until it is played.",
     "UPGRADE_DESCRIPTION": "Draw 2 cards. NL ALL card containing \"Defend\" in your hand costs 0 until they are played."
-
+  },
+  "${modID}:SpikyDefend": {
+    "NAME": "Spiky Defend",
+    "DESCRIPTION": "Gain !B! Block and !M! temporary Thorns."
   }
 }
