@@ -212,5 +212,9 @@
   "${modID}:SpikyDefend": {
     "NAME": "Spiky Defend",
     "DESCRIPTION": "Gain !B! Block and !M! temporary Thorns."
+  },
+  "${modID}:DarkPast": {
+    "NAME": "Dark Past",
+    "DESCRIPTION": "Gain !M! temporary Strength."
   }
 }
