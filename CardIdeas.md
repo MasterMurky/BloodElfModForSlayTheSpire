@@ -5,10 +5,10 @@
   --> heal 1 (cout 2)
   --> gain 1 strenght (cout 3)   --> gain 1 temp. dext (cout 1) (fusionnés)~~
 - ~~lose 1 HP, gain 5 armor, do these actions two (three) times times~~
-* Inflige des dégâts aux adversaires égaux aux dégâts que vous avez pris cette game
+* ~~Inflige des dégâts aux adversaires égaux aux dégâts que vous avez pris cette game~~
 * ~~fromage : heal de ... --> comparer à réparation du defect~~
 * ~~1 - Gagne 5(7) d'armure. Si vous avez subi au moins 1X des dégâts pendant ce tour, vous soigne de 3(4).~~
-* Acceptation du destin : perso qui ouvre grand les bras et qui s'apprête à mourir brûlé--> se met à 1 PV mais ne peut pas mourir pendant 2 tours, se heal de X à la fin du combat
+* Acceptation du destin : perso qui ouvre grand les bras et qui s'apprête à mourir brûlé--> se met à 1 PV mais se soigne de 10(15) à la fin du tour. Sinon à la fin du combat (si tu tues les ennemis ce tour avec Void for ex)
 * ~~inflige 1 dégât à ton perso, 4 à un ennemi aléatoire et te rend 1 PP (amelioré : et pioche 1 carte?) si t as déjà subi 1 dégât ce tour.~~
 * ~~Prend 1 dégât 3X, heal de 5 (7)~~
 * ~~carte injouable qui s'active lorsque tu perds X PV pendant ton tour. Genre 5.~~

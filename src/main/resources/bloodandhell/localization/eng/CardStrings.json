@@ -125,7 +125,7 @@
   "${modID}:Unsheathe": {
     "NAME": "Unsheathe",
     "DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as its cost.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as its cost +1"
+    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as its cost *2"
   },
   "${modID}:Bet": {
     "NAME": "Bet",
@@ -216,5 +216,9 @@
   "${modID}:DarkPast": {
     "NAME": "Dark Past",
     "DESCRIPTION": "Gain !M! temporary Strength."
+  },
+  "${modID}:Hustle": {
+    "NAME": "Hustle",
+    "DESCRIPTION": "Everyone takes 1 damage and Gains !M! temporary Strength ."
   }
 }

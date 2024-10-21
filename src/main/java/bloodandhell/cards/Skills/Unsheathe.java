@@ -44,9 +44,9 @@ public class Unsheathe extends BaseCard {
 
                 int strengthToApply = cardCost;
 
-                // +1 if Upgraded
+                // *2 if Upgraded
                 if (Unsheathe.this.upgraded) {
-                    strengthToApply += 1;
+                    strengthToApply = strengthToApply*2;
                 }
 
                 if (cardCost > 0) {
