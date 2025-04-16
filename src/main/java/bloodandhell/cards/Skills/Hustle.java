@@ -30,7 +30,7 @@ public class Hustle extends BaseCard {
     public Hustle() {
         super(ID, info);
         setMagic(STRENGTH, UPGRADE_PLAYER_STRENGTH);
-        this.rawDescription = "Inflige 1 dégât à vous et tous les ennemis. Donne 1 de Force temporaire à vous et à tous les ennemis."; // Description par défaut
+        // this.rawDescription = "Inflige 1 dégât à vous et tous les ennemis. Donne 1 de Force temporaire à vous et à tous les ennemis."; // Description par défaut
         initializeDescription();
     }
 

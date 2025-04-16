@@ -3,7 +3,7 @@
 
     <properties>
         <modID>BLOODANDHELL</modID>
-        <author>MasterMurky (Or well, you. If you want to use \"quotes\" make sure you have slashes in front of them like this.)</author>
+        <author>MasterMurky</author>
 
         <!-- Change the path for your system to match your Steam installation. -->
         <!-- Path for my smol computer : -->
@@ -27,9 +27,14 @@
     <version>1.0.0</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
-    <description>This is a description!\n"This" is a second line of description.
-    This "\\" is a slash. If you add another line like this:
-    All the spaces on the left of this will be gone. If you want spacing on a new line, do it:\n    like this.</description>
+    <description>Your life is but the currency of your power.\n
+        Embrace the curse of the blood elf—driven by ancient hunger, bound to a legacy of sacrifice.\n
+        With every heartbeat surrendered, your strength surges, your magic deepens, and you seize control of the battlefield.\n
+        Teeter on the edge of oblivion... and become an unstoppable force of arcane wrath.\n
+        \n
+        True domination is forged not in light—but in blood and shadow.
+    </description>
+
 
     <!--You shouldn't need to change anything below this point, but feel free to look at it.-->
     <!--You'll get a warning regarding these when you package your mod, but don't worry, it's just set up like this for convenience.-->
