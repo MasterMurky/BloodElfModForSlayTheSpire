@@ -69,6 +69,7 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 * Compteur du nombre de dégâts subis pendant la game ! (pas le tour), mot clé Furie : atteint si on a subi 10 dégâts sois-même pendant la game. Mot clé coloré pour les cartes. Effet visuel différent : genre coloré en doré quand on atteint l'état furie --> Les effets des cartes s'activent.
 * idée : remplacer le logo Megacrit en y ajoutant des taches de sang. link : https://github.com/QueenMaddii/PrideTheSpire/commit/9183d6151dea722ae52b84468ca85d15e58ddda3
 * mot clé : Rampage(1) : si tu as subi 1X des dégâts pendant ce tour.
+* General des forces armées : invoquer des soldats qui attaquent pour toi ? référence : Azir (tres complexe a mettre en place, a reconsiderer)
 
 ## Reliques
 * améliore toutes les cartes du choix si PV < 35 %

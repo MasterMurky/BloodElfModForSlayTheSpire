@@ -10,7 +10,7 @@
         <!-- C:\Program Files (x86)\Steam\steamapps -->
         <!-- Path for my main computer : -->
         <!-- D:\Steam\steamapps -->
-        <steam.windows>C:\Program Files (x86)\Steam\steamapps</steam.windows>
+        <steam.windows>C:/Program Files (x86)/Steam/steamapps</steam.windows>
         <steam.mac>${user.home}/Library/Application Support/Steam/steamapps</steam.mac>
 
         <!-- These don't have to be up to date, it's just nice if they are. -->
