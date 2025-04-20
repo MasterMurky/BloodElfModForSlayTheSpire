@@ -220,5 +220,11 @@
   "${modID}:Hustle": {
     "NAME": "Hustle",
     "DESCRIPTION": "Everyone takes 1 damage and Gains !M! temporary Strength ."
+  },
+  "${modID}:ExecutionStrike": {
+    "NAME": "Execution Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal !BD! damage instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal !BD! damage instead."
+
   }
 }
