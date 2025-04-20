@@ -38,6 +38,7 @@ public class ExecutionStrike extends BaseCard {
         setMagic(EXEC_THRESHOLD, UPG_EXEC_THRESHOLD);
         this.boostedDamage = BOOSTED_DAMAGES;
         updateDescription(false);
+        tags.add(CardTags.STRIKE); //This tag marks it as a Strike card for the purposes of Perfected Strike and any similar modded effects
     }
 
     @Override

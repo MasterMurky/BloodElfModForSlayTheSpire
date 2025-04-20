@@ -225,6 +225,10 @@
     "NAME": "Execution Strike",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal !BD! damage instead.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal !BD! damage instead."
-
+  },
+  "${modID}:FirstStrike": {
+    "NAME": "First Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself."
   }
 }
