@@ -233,7 +233,7 @@
   },
   "${modID}:ArmyOfSoldiers": {
     "NAME": "Army of Soldiers",
-    "DESCRIPTION": "Add !M! cards to your hand. NL These cards are randomly chosen from Soldier Strike, Soldier Defend and Soldier Devotion."
+    "DESCRIPTION": "Add !M! random Soldier cards to your hand."
   },
   "${modID}:SoldierStrike": {
     "NAME": "Soldier Strike",
@@ -250,5 +250,10 @@
   "${modID}:NotASoldier": {
     "NAME": "Not a Soldier ?",
     "DESCRIPTION": "Heal !M! HP. NL Exhaust."
+  },
+  "${modID}:CommandingPresence": {
+    "NAME": "Commanding Presence",
+    "DESCRIPTION": "At the start of your turn, add !M! random Soldier card to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add !M! random Soldier cards to your hand."
   }
 }

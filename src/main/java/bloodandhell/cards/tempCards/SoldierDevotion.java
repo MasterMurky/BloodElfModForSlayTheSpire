@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class SoldierDevotion extends BaseCard {
     public static final String ID = makeID(SoldierDevotion.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            MyCharacter.Enums.CARD_COLOR,
+            CardColor.COLORLESS,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,

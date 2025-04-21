@@ -1,5 +1,6 @@
 package bloodandhell.cards.Skills;
 
+import basemod.helpers.TooltipInfo;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.cards.tempCards.SoldierDefend;
 import bloodandhell.cards.tempCards.SoldierDevotion;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ArmyOfSoldiers extends BaseCard {
@@ -27,6 +29,8 @@ public class ArmyOfSoldiers extends BaseCard {
 
     private static final int CARDS_TO_ADD = 3;
     private static final int UPG_CARDS_TO_ADD = 2;
+
+    private ArrayList<TooltipInfo> tips;
 
     public ArmyOfSoldiers() {
         super(ID, info);
@@ -59,5 +63,16 @@ public class ArmyOfSoldiers extends BaseCard {
     @Override
     public AbstractCard makeCopy() {
         return new ArmyOfSoldiers();
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        if (tips == null) {
+            tips = new ArrayList<>();
+            tips.add(new TooltipInfo("Soldier Strike", "Deal 5 damage. Exhaust."));
+            tips.add(new TooltipInfo("Soldier Defend", "Gain 3 Block. Exhaust."));
+            tips.add(new TooltipInfo("Soldier Devotion", "Draw 1 card. Exhaust."));
+        }
+        return tips;
     }
 }
