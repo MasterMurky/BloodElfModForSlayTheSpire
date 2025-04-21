@@ -230,7 +230,6 @@ public class BasicMod implements
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
-
     }
 
     @Override

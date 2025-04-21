@@ -230,5 +230,25 @@
     "NAME": "First Strike",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself."
+  },
+  "${modID}:ArmyOfSoldiers": {
+    "NAME": "Army of Soldiers",
+    "DESCRIPTION": "Add !M! cards to your hand. NL These cards are randomly chosen from Soldier Strike, Soldier Defend and Soldier Devotion."
+  },
+  "${modID}:SoldierStrike": {
+    "NAME": "Soldier Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
+  },
+  "${modID}:SoldierDefend": {
+    "NAME": "Soldier Defend",
+    "DESCRIPTION": "Gain !M! Block. NL Exhaust."
+  },
+  "${modID}:SoldierDevotion": {
+    "NAME": "Soldier Devotion",
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
+  },
+  "${modID}:NotASoldier": {
+    "NAME": "Not a Soldier ?",
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
   }
 }
