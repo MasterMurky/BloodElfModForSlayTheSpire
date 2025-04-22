@@ -29,6 +29,7 @@ public class SoldierStrike extends BaseCard {
         super(ID, info);
         setDamage(DMG, UPG_DMG);
         this.exhaust = true;
+        tags.add(CardTags.STRIKE); //This tag marks it as a Strike card for the purposes of Perfected Strike and any similar modded effects
     }
 
     @Override

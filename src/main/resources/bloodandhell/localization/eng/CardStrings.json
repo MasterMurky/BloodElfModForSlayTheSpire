@@ -197,7 +197,7 @@
   },
   "${modID}:Exposure": {
     "NAME": "Exposure",
-    "DESCRIPTION": "Deal !D! damage. Gain 2 Fragile."
+    "DESCRIPTION": "Deal !D! damage. Gain 1 Vulnerable."
   },
   "${modID}:StrategicStrikes": {
     "NAME": "Strategic Strikes",

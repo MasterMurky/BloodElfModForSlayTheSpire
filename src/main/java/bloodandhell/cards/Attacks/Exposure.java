@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
@@ -29,7 +30,7 @@ public class Exposure extends BaseCard {
 
     private static final int DAMAGE = 14;   // Dégâts de base
     private static final int UPG_DAMAGE = 4; // Valeur d'augmentation
-    private static final int DEBUFF_APPLICATIONS = 2;
+    private static final int DEBUFF_APPLICATIONS = 1;
 
     public Exposure() {
         super(ID, info);
@@ -50,8 +51,8 @@ public class Exposure extends BaseCard {
             }
         }
 
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage + UPG_DAMAGE, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new FrailPower(p, DEBUFF_APPLICATIONS, false), DEBUFF_APPLICATIONS));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, DEBUFF_APPLICATIONS, false), DEBUFF_APPLICATIONS));
     }
 
     @Override
