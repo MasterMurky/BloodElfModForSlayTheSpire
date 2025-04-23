@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import bloodandhell.powers.StrategicStrikesPower;
 
@@ -20,12 +21,12 @@ public class StrategicStrikes extends BaseCard {
             1
     );
 
-    private static final int UPG_MAGIC_NUMBER = 1;
+    private static final int MN = 1;
+    private static final int UPG_MN = 1;
 
     public StrategicStrikes() {
         super(ID, info);
-        this.updateDescription();
-        this.magicNumber = this.baseMagicNumber = 1;
+        setMagic(MN,UPG_MN);
     }
 
     @Override
@@ -38,21 +39,6 @@ public class StrategicStrikes extends BaseCard {
         return new StrategicStrikes();
     }
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPG_MAGIC_NUMBER);
-        }
-    }
 
-    public void updateDescription() {
-        if (this.upgraded) {
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
-        } else {
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        }
-        this.initializeDescription();
-    }
 
 }
