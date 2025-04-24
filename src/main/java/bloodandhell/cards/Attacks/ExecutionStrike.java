@@ -25,7 +25,7 @@ public class ExecutionStrike extends BaseCard {
     private static final int UPG_DAMAGE = 3;
 
     private static final int EXEC_THRESHOLD = 20;
-    private static final int UPG_EXEC_THRESHOLD = 5;
+    private static final int UPG_EXEC_THRESHOLD = 10;
 
     private static final int BOOSTED_DAMAGES = 18;
     private static final int UPG_BOOSTED_DAMAGES = 27;

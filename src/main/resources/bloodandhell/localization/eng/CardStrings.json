@@ -255,5 +255,22 @@
     "NAME": "Commanding Presence",
     "DESCRIPTION": "At the start of your turn, add !M! random Soldier card to your hand.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, add !M! random Soldier cards to your hand."
+  },
+  "${modID}:Ambush": {
+    "NAME": "Ambush",
+    "DESCRIPTION": "Gain 1 [E]. NL Upgrade a card in your hand for the rest of the combat. NL Gain 1 Temporary Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain 1 [E]. NL Upgrade a card in your hand for the rest of the combat. NL Gain 1 Dexterity."
+  },
+  "${modID}:ClumsyStrike": {
+    "NAME": "Clumsy Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Lose 5 Strength at the end of the turn."
+  },
+  "${modID}:MobileFortress": {
+    "NAME": "Mobile Fortress",
+    "DESCRIPTION": "Gain !M! Plated Armor, Lose 4 Dexterity at the end of the turn."
+  },
+  "${modID}:Catharsis": {
+    "NAME": "Catharsis",
+    "DESCRIPTION": "Reset the Strength and Dexterity modificators to 0."
   }
 }
