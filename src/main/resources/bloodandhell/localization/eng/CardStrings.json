@@ -272,5 +272,14 @@
   "${modID}:Catharsis": {
     "NAME": "Catharsis",
     "DESCRIPTION": "Reset the Strength and Dexterity modificators to 0."
+  },
+  "${modID}:RejuvenatingBreath": {
+    "NAME": "Rejuvenating Breath",
+    "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block."
+  },
+  "${modID}:BulwarkOfTheTitan": {
+    "NAME": "Bulwark of the Titan",
+    "DESCRIPTION": "Gain Block equal to double your Strength.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to triple your Strength."
   }
 }

@@ -8,11 +8,11 @@
 * ~~Inflige des dégâts aux adversaires égaux aux dégâts que vous avez pris cette game~~
 * ~~fromage : heal de ... --> comparer à réparation du defect~~
 * ~~1 - Gagne 5(7) d'armure. Si vous avez subi au moins 1X des dégâts pendant ce tour, vous soigne de 3(4).~~
-* Acceptation du destin : perso qui ouvre grand les bras et qui s'apprête à mourir brûlé--> se met à 1 PV mais se soigne de 10(15) à la fin du tour. Sinon à la fin du combat (si tu tues les ennemis ce tour avec Void for ex)
+* ~~Acceptation du destin : perso qui ouvre grand les bras et qui s'apprête à mourir brûlé--> se met à 1 PV mais se soigne de 10(15) à la fin du tour. Sinon à la fin du combat (si tu tues les ennemis ce tour avec Void for ex)~~
 * ~~inflige 1 dégât à ton perso, 4 à un ennemi aléatoire et te rend 1 PP (amelioré : et pioche 1 carte?) si t as déjà subi 1 dégât ce tour.~~
 * ~~Prend 1 dégât 3X, heal de 5 (7)~~
 * ~~carte injouable qui s'active lorsque tu perds X PV pendant ton tour. Genre 5.~~
-* infliger X(Y) dégâts à un ennemi. Se soigne de la moitié des dégâts infligés.
+* ~~infliger X(Y) dégâts à un ennemi. Se soigne de la moitié des dégâts infligés.~~ (canceled)
 * ~~0 : perdre 2PV, piocher une(2) carte.~~
 * 1 - Apothéose : Si vous avez subi des dégâts 3X pendant ce tour, inflige 12(15) dégâts à tous les ennemis.
 * Si t'es affaibli, inflige + de dégâts.
@@ -22,11 +22,11 @@
 Idée : améliorer sa force de façon significative en se donnant des buffs temporaires puis en enlevant l'effet temporaire (débuff). Ensuite, jouer des cartes qui infliges 2 dégâts 5X pour rentabiliser la force. Ou cartes dont l'effet de force est dupliqué.
 * ~~1 - mets dans votre main une (2) copie de la dernière carte que vous avez joué, la copie prend épuisement. éthéré & épuisement~~
 * ~~1 (0) - pioche 1 carte, gagne 1 de force temporaire par carte piochée ce tour~~
-* 1/2? - annule vos débuffs 2 puis (1) ? upgrade?? (fort car annule aussi les débuffs des ennemis - carte rare car pas besoin de plein de copies
-*  retour à zéro : 2 - annule vos débuffs, pioche 1 par débuff retiré
-* 0 - tout le monde prend 1 dégât, tout le monde gagne 1 de dext/force?
+* ~~1/2? - annule vos débuffs 2 puis (1) ? upgrade?? (fort car annule aussi les débuffs des ennemis - carte rare car pas besoin de plein de copies~~
+*  ~~retour à zéro : 2 - annule vos débuffs, pioche 1 par débuff retiré~~
+* ~~0 - tout le monde prend 1 dégât, tout le monde gagne 1 de dext/force?~~
 * 0 - Bâton tordu : Inflige 1 dégât 3X, pioche 1 carte
-* 1 - Mec musclé genre solide qui flex : Gagne autant d'armure que le montant (double) de votre force.
+* ~~1 - Mec musclé genre solide qui flex : Gagne autant d'armure que le montant (double) de votre force.~~
 * carte qui te donne autant de force que la force temporaire que tu as actuellement. calculer la force actuelle moins le débuff de force temporaire.
 
 
@@ -49,7 +49,7 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 * ~~carte choix : shield ou atk ennemi (random?) (voir carte existante Wish)~~
 * carte de cout X
 * ~~petits plaisirs/tout en un : 2 - draw 1, inflige 6(9) dégâts à un ennemi aléatoire, gagne 5/8 d'armure, soigne de 4, gagne 10 d'or. épuisement~~
-* 1 - Creux intérieur (personnage avec creux noir genre trou au milieu de son corps ) : inflige des dégâts à un ennemi équivalents à ses PV manquants divisés par 5 (4) - maximum de 30 dégâts (pour éviter les abus sur le coeur par exemple)
+* ~~1 - Creux intérieur (personnage avec creux noir genre trou au milieu de son corps ) : inflige des dégâts à un ennemi équivalents à ses PV manquants divisés par 5 (4) - maximum de 30 dégâts (pour éviter les abus sur le coeur par exemple)~~
 * ~~joue les cartes du haut de son paquet genre les 2 (3) du dessus - mesures d'extrême urgence~~
 * Sacrement d'un roi (?) nom stylé xD - gagne 10 d'or et le statut couronné : chaque ennemi tué pendant le combat donne 5 d'or. couronne qui descend sur la tête comme effet visuel + bruit de trompettes
 * Code moral écarlate --> vanish une carte de sa main et .. ?
@@ -75,3 +75,5 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 * améliore toutes les cartes du choix si PV < 35 %
 * toutes les 20 cartes piochées, pioche 2 cartes de plus
 * relique de boss...? Genre gagne 1 d'énergie 1 tour sur deux, gagne 1 d'énergie au début du tour si chiffre des dizaine des PV pair. (fun en général et possibilité de contrôler ce chiffre si on joue en mode sang)
+
+(verifier cartes dont les images débordent ou sont raccourcies dans le compendium (attaques, spells))

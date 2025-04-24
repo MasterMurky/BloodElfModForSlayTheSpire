@@ -24,7 +24,7 @@ public class MobileFortress extends BaseCard {
 
     private static final int PLATED_ARMOR = 4;
     private static final int UPGRADED_PLATED_ARMOR = 2;
-    private static final int DEX_LOSS = -4;
+    private static final int DEX_LOSS = 4;
 
     public MobileFortress() {
         super(ID, info);
@@ -36,7 +36,7 @@ public class MobileFortress extends BaseCard {
         // Applique l'armure plaquée
         addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber), this.magicNumber));
         // Réduit la dextérité
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.DEX_LOSS), this.DEX_LOSS));
 
     }
 
