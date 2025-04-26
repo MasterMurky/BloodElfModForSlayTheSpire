@@ -171,10 +171,6 @@
     "NAME": "Purification",
     "DESCRIPTION": "Remove all Debuffs."
   },
-  "${modID}:Redemption": {
-    "NAME": "Redemption",
-    "DESCRIPTION": "..."
-  },
   "${modID}:Backlash": {
     "NAME": "Backlash",
     "DESCRIPTION": "Deal !D! damage. Gain 1 Weak and 1 Vulnerable."
