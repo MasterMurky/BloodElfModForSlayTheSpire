@@ -277,5 +277,9 @@
     "NAME": "Bulwark of the Titan",
     "DESCRIPTION": "Gain Block equal to double your Strength.",
     "UPGRADE_DESCRIPTION": "Gain Block equal to triple your Strength."
+  },
+  "${modID}:Sacrament": {
+    "NAME": "Sacrament",
+    "DESCRIPTION": "Gain !M! Gold. Gain 5 more Gold whenever an enemy dies this combat"
   }
 }
