@@ -36,6 +36,7 @@ public class BasicMod implements
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
+        AddAudioSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -259,5 +260,10 @@ public class BasicMod implements
                     BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
                     //playerClass will make a potion character-specific. By default, it's null and will do nothing.
                 });
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio("bloodelf:drop", "bloodandhell/audio/water_drop.ogg");
     }
 }

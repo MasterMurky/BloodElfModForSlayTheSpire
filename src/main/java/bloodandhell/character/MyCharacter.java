@@ -158,16 +158,15 @@ public class MyCharacter extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        //This occurs when you click the character's button in the character select screen.
-        //See SoundMaster for a full list of existing sound effects, or look at BaseMod's wiki for adding custom audio.
-        CardCrawlGame.sound.playA("BELL", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA("bloodelf:drop", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
+
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        //Similar to doCharSelectScreenSelectEffect, but used for the Custom mode screen. No shaking.
-        return "BELL";
+        return "bloodelf:drop";
     }
+
 
     //Don't adjust these four directly, adjust the contents of the CharacterStrings.json file.
     @Override

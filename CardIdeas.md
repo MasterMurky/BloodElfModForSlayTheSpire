@@ -47,5 +47,6 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 * améliore toutes les cartes du choix si PV < 35 %
 * toutes les 20 cartes piochées, pioche 2 cartes de plus
 * relique de boss...? Genre gagne 1 d'énergie 1 tour sur deux, gagne 1 d'énergie au début du tour si chiffre des dizaine des PV pair. (fun en général et possibilité de contrôler ce chiffre si on joue en mode sang)
+  * relique de base : monnaie de sang gagnée en sacrifiant des PV, aux feux de camp possibilité de dépenser les points de sang dont le chiffre est stocké dans la relique pour augmenter ses PV max.
 
 (verifier cartes dont les images débordent ou sont raccourcies dans le compendium (attaques, spells))
