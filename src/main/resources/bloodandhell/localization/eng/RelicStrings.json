@@ -1,17 +1,24 @@
 {
-  "${modID}:RelicID": {
+  "BLOODANDHELL:RelicID": {
     "NAME": "Good Relic",
     "FLAVOR": "Flavor text displayed in detailed relic view.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
   },
-  "${modID}:MyRelic": {
+  "BLOODANDHELL:MyRelic": {
     "NAME": "My Relic",
     "FLAVOR": "I followed a tutorial and I'm proud of it!",
     "DESCRIPTIONS": [
       "Whenever you play a card, gain #b",
       " #yStrength."
+    ]
+  },
+  "BLOODANDHELL:banner": {
+    "NAME": "Bloodstained banner",
+    "FLAVOR": "She didn't come here alone.. and this proves it",
+    "DESCRIPTIONS": [
+      "At the end of combat, if the digit in the tens place is even, Gain 10 Gold. If odd, Raise your max HP by 2."
     ]
   }
 }

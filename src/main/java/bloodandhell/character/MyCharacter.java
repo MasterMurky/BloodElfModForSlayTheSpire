@@ -7,6 +7,7 @@ import bloodandhell.cards.Attacks.Strike;
 import bloodandhell.cards.Skills.Defend;
 import bloodandhell.cards.Attacks.HeroicStrike;
 import bloodandhell.cards.Skills.NotToday;
+import bloodandhell.relics.banner;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -101,7 +102,7 @@ public class MyCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() { //la relique unique du perso
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(banner.ID);
 
         return retVal;
     }

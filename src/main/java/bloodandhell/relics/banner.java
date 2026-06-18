@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static bloodandhell.BasicMod.makeID;
 
-public class MyRelic extends BaseRelic {
-    private static final String NAME = "MyRelic"; //The name will be used for determining the image file as well as the ID.
+public class banner extends BaseRelic {
+    private static final String NAME = "banner"; //The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); //This adds the mod's prefix to the relic ID, resulting in modID:MyRelic
-    private static final RelicTier RARITY = RelicTier.COMMON; //The relic's rarity.
+    private static final RelicTier RARITY = RelicTier.STARTER; //The relic's rarity.
     // STARTER, COMMON, UNCOMMON, RARE, SHOP, BOSS, SPECIAL (for events)
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
 
@@ -29,7 +29,7 @@ public class MyRelic extends BaseRelic {
     // Special hooks :
     // https://github.com/daviscook477/BaseMod/wiki/Hooks
     // https://github.com/kiooeht/StSLib/wiki/Relic-Hooks
-    public MyRelic() {
+    public banner() {
         super(ID, NAME, MyCharacter.Enums.CARD_COLOR, RARITY, SOUND);
     }
 
@@ -43,6 +43,9 @@ public class MyRelic extends BaseRelic {
     // Automatically updates the description in the json file
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + STRENGTH + DESCRIPTIONS[1];
+        if (DESCRIPTIONS == null || DESCRIPTIONS.length == 0) {
+            return "At the end of combat, if the digit in the tens place is even, Gain 10 Gold. If odd, Raise your max HP by 2.";
+        }
+        return DESCRIPTIONS[0];
     }
 }
