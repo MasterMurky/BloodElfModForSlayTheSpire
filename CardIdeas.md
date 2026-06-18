@@ -50,3 +50,8 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
   * relique de base : monnaie de sang gagnée en sacrifiant des PV, aux feux de camp possibilité de dépenser les points de sang dont le chiffre est stocké dans la relique pour augmenter ses PV max.
 
 (verifier cartes dont les images débordent ou sont raccourcies dans le compendium (attaques, spells))
+
+## Reste à faire
+img perso couché mort
+feu de camp2 modif bonne image qui apparait (actuellement 1)
+orbe énergie animée en rouge
