@@ -18,7 +18,7 @@
     "NAME": "Bloodstained banner",
     "FLAVOR": "She didn't come here alone.. and this proves it",
     "DESCRIPTIONS": [
-      "At the end of combat, if the digit in the tens place is even, Gain 10 Gold. If odd, Raise your max HP by 2."
+      "At the end of combat, if your HP digit in the tens place is even, one of your card rewards is upgraded. If it's odd, Gain a potion that raises your max HP by 2 and heals 1 HP when consumed."
     ]
   }
 }

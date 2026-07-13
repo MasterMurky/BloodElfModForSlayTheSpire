@@ -13,6 +13,10 @@
     "NAME": "Heroic Strike",
     "DESCRIPTION": "Deal !D! damage. NL All Heroic Strike cards deal !M! more damage this combat."
   },
+  "${modID}:BloodPact": {
+    "NAME": "Blood Pact",
+    "DESCRIPTION": "Lose !${modID}:hpLoss! HP. NL Heal !${modID}:hpGain! HP at the start of your next 3 turns."
+  },
   "${modID}:NotToday": {
     "NAME": "Not Today",
     "DESCRIPTION": "Retain. NL Gain !B! Block."

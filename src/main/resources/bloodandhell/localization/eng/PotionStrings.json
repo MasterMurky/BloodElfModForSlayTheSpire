@@ -15,6 +15,14 @@
       "Lose 10 HP.Gain #b",
       " #yStrength."
     ]
+  },
+  "${modID}:LiquidVitality": {
+    "NAME": "Liquid Vitality",
+    "DESCRIPTIONS": [
+      "Raise Max HP by #b",
+      " and Heal #g",
+      "."
+    ]
   }
 
 }

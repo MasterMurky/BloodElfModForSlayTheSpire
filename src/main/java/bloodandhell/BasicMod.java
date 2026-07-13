@@ -89,6 +89,7 @@ public class BasicMod implements
     @Override
     public void receivePostInitialize() {
         registerPotions();
+        new bloodandhell.ui.SideCounterUI();
         //This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.

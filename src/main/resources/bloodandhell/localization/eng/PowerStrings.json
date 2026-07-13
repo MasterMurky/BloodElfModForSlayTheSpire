@@ -15,5 +15,11 @@
     "NAME": "Regeneration",
     "DESCRIPTIONS": [
       "Gain block whenever you take damage during your turn."    ]
+  },
+  "${modID}:DelayedRegenerationPower": {
+    "NAME": "Delayed Regeneration",
+    "DESCRIPTIONS": [
+      "Heal %d HP at the start of your next %d turn(s)."
+    ]
   }
 }

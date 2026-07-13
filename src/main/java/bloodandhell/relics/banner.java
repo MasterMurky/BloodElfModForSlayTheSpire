@@ -1,11 +1,8 @@
 package bloodandhell.relics;
 
 import bloodandhell.character.MyCharacter;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import bloodandhell.potions.LiquidVitality;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static bloodandhell.BasicMod.makeID;
 
@@ -16,9 +13,17 @@ public class banner extends BaseRelic {
     // STARTER, COMMON, UNCOMMON, RARE, SHOP, BOSS, SPECIAL (for events)
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
 
+    // Les cartes de récompense n'existent pas encore au moment d'onVictory() : elles sont
+    // créées plus tard par CombatRewardScreen.setupItemReward(). On pose donc juste un
+    // drapeau ici, et bloodandhell.patches.BannerCardUpgradePatch fait l'amélioration
+    // juste après que les cartes aient été générées.
+    private boolean pendingCardUpgrade = false;
 
-    private static final int STRENGTH = 10;
-
+    public boolean consumePendingCardUpgrade() {
+        boolean pending = pendingCardUpgrade;
+        pendingCardUpgrade = false;
+        return pending;
+    }
 
     // Two constructors : one for character's relics and one for basic relics
     // Don't write the color parameter if it isn't a relic for a character : super(ID, NAME, RARITY, SOUND);
@@ -33,18 +38,22 @@ public class banner extends BaseRelic {
         super(ID, NAME, MyCharacter.Enums.CARD_COLOR, RARITY, SOUND);
     }
 
-    // Just write "publi" and you'll see all the available hooks
     @Override
-    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        // Give the player the strength when he plays a card
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, STRENGTH)));
+    public void onVictory() {
+        flash();
+        int tensDigit = (AbstractDungeon.player.currentHealth / 10) % 10;
+        if (tensDigit % 2 == 0) {
+            pendingCardUpgrade = true;
+        } else {
+            AbstractDungeon.getCurrRoom().addPotionToRewards(new LiquidVitality());
+        }
     }
 
     // Automatically updates the description in the json file
     @Override
     public String getUpdatedDescription() {
         if (DESCRIPTIONS == null || DESCRIPTIONS.length == 0) {
-            return "At the end of combat, if the digit in the tens place is even, Gain 10 Gold. If odd, Raise your max HP by 2.";
+            return "At the end of combat, if your HP digit in the tens place is even, one of your card rewards is upgraded. If it's odd, Gain a potion that raises your max HP by 2 and heals 1 HP when consumed.";
         }
         return DESCRIPTIONS[0];
     }
