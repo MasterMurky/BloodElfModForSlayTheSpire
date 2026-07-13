@@ -2,7 +2,8 @@ package bloodandhell.character;
 
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
+import basemod.animations.SpineAnimation; // ← Changé : SpriterAnimation → SpineAnimation
+import com.esotericsoftware.spine.AnimationState;
 import bloodandhell.cards.Attacks.Strike;
 import bloodandhell.cards.Skills.Defend;
 import bloodandhell.cards.Attacks.HeroicStrike;
@@ -32,30 +33,34 @@ import static bloodandhell.BasicMod.characterPath;
 import static bloodandhell.BasicMod.makeID;
 
 public class MyCharacter extends CustomPlayer {
-    //Stats ça parle de sois-même
     public static final int ENERGY_PER_TURN = 3;
     public static final int MAX_HP = 78;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
 
-    //Strings
-    private static final String ID = makeID("Tormented"); //This should match whatever you have in the CharacterStrings.json file
+    private static final String ID = makeID("Tormented");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
 
-    //Image file paths
-    private static final String SHOULDER_1 = characterPath("shoulder.png"); //Shoulder 1 and 2 are used at rest sites.
+    private static final String SHOULDER_1 = characterPath("shoulder.png");
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
-    private static final String CORPSE = characterPath("corpse.png"); //Corpse is when you die.
+    private static final String CORPSE = characterPath("corpse.png");
+
+    // ↓ Chemins vers les fichiers Spine exportés depuis DragonBones
+    private static final String ATLAS = characterPath("animation/skeleton.atlas");
+    private static final String JSON  = characterPath("animation/skeleton.json");
+    // ATTENTION : BaseMod fait SkeletonJson.setScale(Settings.renderScale / ANIMATION_SCALE)
+    // (division, pas multiplication !) -> plus ANIMATION_SCALE est grand, plus le perso est PETIT.
+    // Nouvel export (600x600, whitespace stripping désactivé) : squelette ~482 unités de haut,
+    // les persos vanilla (Ironclad) font ~243 unités -> 482/243 ≈ 1.98.
+    private static final float ANIMATION_SCALE = 1.98f;
 
     public static class Enums {
-        //These are used to identify your character, as well as your character's card color.
-        //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
         public static AbstractPlayer.PlayerClass TORMENTED_ONE;
-        @SpireEnum(name = "TORMENTED_BLACK_AURA") // These two MUST match. Change it to something unique for your character.
+        @SpireEnum(name = "TORMENTED_BLACK_AURA")
         public static AbstractCard.CardColor CARD_COLOR;
         @SpireEnum(name = "TORMENTED_BLACK_AURA") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
@@ -63,21 +68,27 @@ public class MyCharacter extends CustomPlayer {
 
     public MyCharacter() {
         super(NAMES[0], Enums.TORMENTED_ONE,
-                new CustomEnergyOrb(null, null, null), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+                new CustomEnergyOrb(null, null, null),
+                new SpineAnimation(ATLAS, JSON, ANIMATION_SCALE)); // ← Spine au lieu de Spriter
 
         initializeClass(null,
                 SHOULDER_2,
                 SHOULDER_1,
                 CORPSE,
                 getLoadout(),
-                20.0F, -20.0F, 200.0F, 250.0F, //Character hitbox. x y position, then width and height.
+                20.0F, -20.0F, 200.0F, 250.0F,
                 new EnergyManager(ENERGY_PER_TURN));
 
-        //Location for text bubbles. You can adjust it as necessary later. For most characters, these values are fine.
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
+
+        // BaseMod ne joue aucune animation par défaut : il faut la lancer explicitement.
+        // "idle" doit correspondre EXACTEMENT (casse incluse) au nom de l'animation dans skeleton.json.
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
     }
+
+    // ... reste du fichier inchangé
 
     @Override
     public ArrayList<String> getStartingDeck() { //le deck de base du perso

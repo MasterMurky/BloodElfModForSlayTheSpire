@@ -52,6 +52,6 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 (verifier cartes dont les images débordent ou sont raccourcies dans le compendium (attaques, spells))
 
 ## Reste à faire
-img perso couché mort
 feu de camp2 modif bonne image qui apparait (actuellement 1)
 orbe énergie animée en rouge
+cartes à débloquer avec les levels --> contenu débloquable, envie de progresser :D
