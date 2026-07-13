@@ -1,125 +1,221 @@
 
-skeleton.png
-size: 4096,2048
+skeleton_0.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3070
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 0
+
+skeleton_1.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3075
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 1
+
+skeleton_2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3072
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 2
+
+skeleton_3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3077
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 3
+
+skeleton_4.png
+size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 IMG_3087
   rotate: false
-  xy: 603, 603
-  size: 600, 600
-  orig: 600, 600
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
   offset: 0, 0
-  index: -1
-IMG_3086
-  rotate: false
-  xy: 3011, 603
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3070
-  rotate: false
-  xy: 1, 1
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3071
-  rotate: false
-  xy: 1807, 603
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3072
-  rotate: false
-  xy: 1, 1205
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3073
-  rotate: false
-  xy: 2409, 1
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3074
-  rotate: false
-  xy: 1205, 1205
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3075
-  rotate: false
-  xy: 1, 603
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3076
-  rotate: false
-  xy: 1807, 1205
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3077
-  rotate: false
-  xy: 603, 1
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3078
-  rotate: false
-  xy: 3011, 1
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3080
-  rotate: false
-  xy: 2409, 1205
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3083
-  rotate: false
-  xy: 1807, 1
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3084
-  rotate: false
-  xy: 2409, 603
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3085
-  rotate: false
-  xy: 1205, 1
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
-IMG_3081
-  rotate: false
-  xy: 1205, 603
-  size: 600, 600
-  orig: 600, 600
-  offset: 0, 0
-  index: -1
+  index: 4
+
+skeleton_5.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
 IMG_3079
   rotate: false
-  xy: 603, 1205
-  size: 600, 600
-  orig: 600, 600
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
   offset: 0, 0
-  index: -1
+  index: 5
+
+skeleton_6.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3085
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 6
+
+skeleton_7.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3081
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 7
+
+skeleton_8.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3074
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 8
+
+skeleton_9.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3083
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 9
+
+skeleton_10.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3071
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 10
+
+skeleton_11.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3076
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 11
+
+skeleton_12.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3073
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 12
+
+skeleton_13.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3078
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 13
+
+skeleton_14.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3084
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 14
+
+skeleton_15.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3080
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 15
+
+skeleton_16.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+IMG_3086
+  rotate: false
+  xy: 2, 2
+  size: 1050, 1050
+  orig: 1050, 1050
+  offset: 0, 0
+  index: 16
