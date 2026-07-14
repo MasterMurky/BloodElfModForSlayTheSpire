@@ -50,7 +50,7 @@ public class AllInOne extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL)); //(1er paramètre = la cible à laquelle infliger des dégâts), DamageInfo (source des dégâts, amount et type de dégâts)
-        addToBot(new GainBlockAction(p, p, BLOCK)); //addToBot ajoute l'action à faire à la fin de l'action queue  (source, target, amount)
+        addToBot(new GainBlockAction(p, p, this.block)); //addToBot ajoute l'action à faire à la fin de l'action queue  (source, target, amount)
         p.heal(4);
         AbstractDungeon.effectList.add(new RainingGoldEffect(10 * 2, true));
         AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());

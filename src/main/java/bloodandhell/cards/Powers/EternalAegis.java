@@ -51,9 +51,8 @@ public class EternalAegis extends BaseCard {
 
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeName();
             this.upgradeMagicNumber(upg_magicNumber); //on utilise upg_MN à la place de MG lorsque la carte est améliorée
-            //faut que la carte baisse les PV perdus de 2 lors de l'upgrade --> ou pas eft
+            super.upgrade(); // Applique aussi la baisse du coût en PV (HPLost: 7 -> 5).
         }
     }
 }

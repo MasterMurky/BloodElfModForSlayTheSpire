@@ -2,9 +2,10 @@ package bloodandhell.cards.Skills;
 
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
-import bloodandhell.powers.AvaricePower;
 import bloodandhell.util.CardStats;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,30 +20,30 @@ public class Avarice extends BaseCard {
             -1 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    //These will be used in the constructor. Technically you can just use the values directly,
-    //but constants at the top of the file are easy to adjust.
+    // Montant soigné à chaque itération (X fois, X = énergie dépensée).
+    private static final int MN = 2;
+    private static final int UPG_MN = 1;
 
     public Avarice() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-        this.exhaust = true;
-            }
+        setMagic(MN, UPG_MN);
+        setExhaust(true, false); // L'amélioration retire l'Exhaust (voir UPGRADE_DESCRIPTION).
+    }
 
     public Avarice(String ID, CardStats info) {
         super(ID, info);
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
-        addToBot((AbstractGameAction)new AvaricePower(p, m, this.energyOnUse));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.exhaust = false; // Remove the Exhaust status when upgraded.
-            this.rawDescription = "Lose 1HP, Heal !M!HP, Gain 1 [E], X times."; // Facultatif : mettre à jour la description si nécessaire
-            this.initializeDescription(); // Update the interface to make the changes appear.
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        bloodandhell.BasicMod.logger.info("=== AVARICE DEBUG === cost=" + this.cost
+                + " costForTurn=" + this.costForTurn
+                + " energyOnUse=" + this.energyOnUse
+                + " currentEnergy=" + com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.energy.energy);
+        for (int i = 0; i < this.energyOnUse; i++) {
+            addToBot(new LoseHPAction(p, p, 1));
+            addToBot(new HealAction(p, p, this.magicNumber));
+            addToBot(new GainEnergyAction(1));
         }
     }
 

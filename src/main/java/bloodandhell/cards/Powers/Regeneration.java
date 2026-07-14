@@ -22,19 +22,19 @@ public class Regeneration extends BaseCard {
             2 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    private static final int upg_magicNumber = 2; //l'UPG du MN va ici mais le MN va dans la méthode juste en dessous
+    private static final int upg_magicNumber = 1; //l'UPG du MN va ici mais le MN va dans la méthode juste en dessous
 
 
     public Regeneration() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 1;
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
-        addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new RegenerationPower(ID, AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
+        addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new RegenerationPower(bloodandhell.BasicMod.makeID("RegenerationPower"), AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
 
     }
 

@@ -44,7 +44,7 @@ public class ExecutionStrike extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int finalDamage = this.damage;
-        if (m.currentHealth <= this.magicNumber) {
+        if (m != null && m.currentHealth <= this.magicNumber) {
             finalDamage = this.boostedDamage;
         }
 

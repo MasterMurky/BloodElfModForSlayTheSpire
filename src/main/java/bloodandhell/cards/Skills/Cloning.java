@@ -29,7 +29,7 @@ public class Cloning extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setMagic(MN, UPG_MN); //Sets the card's MN and how much it changes when upgraded.
-        this.baseEthereal = true;
+        setEthereal(true);
         this.exhaust = true;
             }
 

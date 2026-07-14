@@ -46,9 +46,7 @@ public class RejuvenatingBreath extends BaseCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();
-            this.rawDescription = "Heal " + (HEAL_AMOUNT + UPGRADE_HEAL) + " HP and gain " + (BLOCK_AMOUNT + UPGRADE_BLOCK) + " Block.";
-            initializeDescription();
+            super.upgrade(); // Applique le gain de PV/Bloc et le texte UPGRADE_DESCRIPTION (avec !M!/!B!).
         }
     }
 

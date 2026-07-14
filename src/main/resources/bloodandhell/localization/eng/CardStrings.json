@@ -56,11 +56,11 @@
   },
   "${modID}:Regeneration": {
     "NAME": "Regeneration",
-    "DESCRIPTION": "Whenever you lose HP during your turn, heal 1 HP."
+    "DESCRIPTION": "Whenever you lose HP during your turn, heal !M! HP."
   },
   "${modID}:FacingDestiny": {
     "NAME": "Facing Destiny",
-    "DESCRIPTION": "Your HP is 1. NL You can't take damage during 2 turns. NL At the end of the combat, Heal !M! HP."
+    "DESCRIPTION": "Your HP is 1. NL You can't take damage during 2 turns. NL At the end of the combat, Heal !M! HP. NL Exhaust."
   },
   "${modID}:Cheese": {
     "NAME": "Cheese",
@@ -151,7 +151,8 @@
   },
   "${modID}:Avarice": {
     "NAME": "Avarice",
-    "DESCRIPTION": "Lose 1HP, Heal !M! HP, Gain 1 [E] , X times. NL Exhaust."
+    "DESCRIPTION": "Lose 1HP, Heal !M! HP, Gain 1 [E] , X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose 1HP, Heal !M! HP, Gain 1 [E] , X times."
   },
   "${modID}:Correction": {
     "NAME": "Correction",
@@ -275,7 +276,8 @@
   },
   "${modID}:RejuvenatingBreath": {
     "NAME": "Rejuvenating Breath",
-    "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block."
+    "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block."
   },
   "${modID}:BulwarkOfTheTitan": {
     "NAME": "Bulwark of the Titan",

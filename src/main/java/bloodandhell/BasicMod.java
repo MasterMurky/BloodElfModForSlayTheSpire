@@ -37,7 +37,8 @@ public class BasicMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        SetUnlocksSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -95,6 +96,11 @@ public class BasicMod implements
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+    }
+
+    @Override
+    public void receiveSetUnlocks() {
+        bloodandhell.util.CardUnlockManager.registerBundles();
     }
 
     /*----------Localization---------- */

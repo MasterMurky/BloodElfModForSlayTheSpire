@@ -35,16 +35,16 @@ public class Surpassing extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
         if (!this.upgraded){
-            addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new SurpassingPower(ID, AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
+            addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new SurpassingPower(bloodandhell.BasicMod.makeID("SurpassingPower"), AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
         }
         else if (this.upgraded){
-            addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new SurpassingPowerUpg(ID, AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
+            addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new SurpassingPowerUpg(bloodandhell.BasicMod.makeID("SurpassingPowerUpg"), AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
         }
     }
 
     public void upgrade () {
         if (!this.upgraded) {
-            this.upgradeName();
+            super.upgrade(); // Met aussi à jour la description avec UPGRADE_DESCRIPTION.
         }
     }
 }

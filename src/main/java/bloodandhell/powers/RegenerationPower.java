@@ -67,7 +67,7 @@ public class RegenerationPower extends AbstractPower {
         if (damageAmount > 0 && info.owner == this.owner) {
             flash();
             AbstractPlayer p = AbstractDungeon.player;
-            p.heal(1);
+            p.heal(this.amount);
         }
     }
 }

@@ -38,7 +38,7 @@ public class NotToday extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
-        addToBot(new GainBlockAction(p, p, BLOCK)); //addToBot ajoute l'action à faire à la fin de l'action queue  (source, target, amount)
+        addToBot(new GainBlockAction(p, p, this.block)); //addToBot ajoute l'action à faire à la fin de l'action queue  (source, target, amount)
     }
 
     //Optional

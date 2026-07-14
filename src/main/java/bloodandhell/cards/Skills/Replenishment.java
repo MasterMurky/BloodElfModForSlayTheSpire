@@ -57,7 +57,7 @@ public class Replenishment extends BaseCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();
+            super.upgrade(); // Met à jour la description avec UPGRADE_DESCRIPTION.
         }
     }
 

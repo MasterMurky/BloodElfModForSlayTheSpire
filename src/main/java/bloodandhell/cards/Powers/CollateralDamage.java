@@ -28,19 +28,13 @@ public class CollateralDamage extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         this.magicNumber = this.baseMagicNumber = 4;
+        setInnate(false, true); // Innate seulement une fois améliorée (voir UPGRADE_DESCRIPTION).
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
-        addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new CollateralDamagePower(ID, AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
+        addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new CollateralDamagePower(bloodandhell.BasicMod.makeID("CollateralDamagePower"), AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
 
-    }
-
-    public void upgrade () {
-        if (!this.upgraded) {
-            this.upgradeName();
-            //upgradeBaseCost(1);
-        }
     }
 }

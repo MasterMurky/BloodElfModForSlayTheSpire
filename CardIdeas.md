@@ -4,7 +4,8 @@
 * carte injouable qui s'active lorsque tu perds X PV pendant ton tour. Genre 5.
 * 1 - Apothéose : Si vous avez subi des dégâts 3X pendant ce tour, inflige 12(15) dégâts à tous les ennemis.
 * Si t'es affaibli, inflige + de dégâts.
-
+* Annuler la prochaine instance de dégâts subis. Pour éviter 
+* carte dont le coût baisse tov au nombre de dégâts subis pendant le combat en tout (2e valeur de l'UI)
 
 ## Buffs temporaires et annulation de l'effet temporaire
 Idée : améliorer sa force de façon significative en se donnant des buffs temporaires puis en enlevant l'effet temporaire (débuff). Ensuite, jouer des cartes qui infliges 2 dégâts 5X pour rentabiliser la force. Ou cartes dont l'effet de force est dupliqué.

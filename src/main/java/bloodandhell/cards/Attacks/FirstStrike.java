@@ -43,7 +43,7 @@ public class FirstStrike extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         // Si l'ennemi n'est pas à plein HP, infliger des dégâts au joueur
-        if (m.currentHealth < m.maxHealth) {
+        if (m != null && m.currentHealth < m.maxHealth) {
             addToBot(new DamageAction(p, new DamageInfo(p, this.boostedSelfDamage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
     }

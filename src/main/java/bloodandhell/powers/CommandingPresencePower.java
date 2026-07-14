@@ -4,7 +4,6 @@ import bloodandhell.cards.tempCards.SoldierDefend;
 import bloodandhell.cards.tempCards.SoldierDevotion;
 import bloodandhell.cards.tempCards.SoldierStrike;
 import bloodandhell.cards.tempCards.NotASoldier;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -82,9 +81,6 @@ public class CommandingPresencePower extends AbstractPower {
         for (AbstractCard card : cardsToAdd) {
             AbstractDungeon.player.hand.addToTop(card);
         }
-
-        // Ajouter un message d'info (optionnel, pour débogage)
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, cardsToAdd.size()));
     }
 
 }

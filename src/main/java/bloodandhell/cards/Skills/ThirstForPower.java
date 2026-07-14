@@ -36,7 +36,11 @@ public class ThirstForPower extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.POWER).makeCopy();
+        AbstractCard picked = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.POWER);
+        if (picked == null) {
+            return; // Pas de carte Pouvoir disponible dans le pool : rien à faire.
+        }
+        AbstractCard c = picked.makeCopy();
         int  cost = c.cost;
         addToBot(new LoseHPAction(p, p, cost));
         c.setCostForTurn(0);

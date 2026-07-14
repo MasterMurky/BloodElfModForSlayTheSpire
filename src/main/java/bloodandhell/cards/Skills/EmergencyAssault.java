@@ -34,7 +34,7 @@ public class EmergencyAssault extends BaseCard {
         for (int i = 0; i < 3; i++) {
             AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard(); // Récupère la carte du dessus du deck
             // Vérifie si la carte EmergencyAssault est améliorée et si la carte du dessus n'est pas déjà améliorée
-            if (this.upgraded && topCard.canUpgrade() && !topCard.upgraded) {
+            if (topCard != null && this.upgraded && topCard.canUpgrade() && !topCard.upgraded) {
                 topCard.upgrade();  // Améliore la carte du dessus si elle peut être améliorée et n'est pas déjà améliorée
             }
             addToBot(new PlayTopCardAction(

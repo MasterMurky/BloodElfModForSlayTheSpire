@@ -14,12 +14,44 @@
   "${modID}:RegenerationPower": {
     "NAME": "Regeneration",
     "DESCRIPTIONS": [
-      "Gain block whenever you take damage during your turn."    ]
+      "Heal whenever you take damage during your turn."
+    ]
   },
   "${modID}:DelayedRegenerationPower": {
     "NAME": "Delayed Regeneration",
     "DESCRIPTIONS": [
       "Heal %d HP at the start of your next %d turn(s)."
+    ]
+  },
+  "${modID}:StrategicStrikesPower": {
+    "NAME": "Strategic Strikes",
+    "DESCRIPTIONS": [
+      "Draw ",
+      " card(s) whenever you play a card containing \"Strike\"."
+    ]
+  },
+  "${modID}:FacingDestinyPower": {
+    "NAME": "Facing Destiny",
+    "DESCRIPTIONS": [
+      "Immune to damage for %d more turn(s). NL At the end of combat, heal %d HP."
+    ]
+  },
+  "${modID}:SurpassingPower": {
+    "NAME": "Surpassing",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP during your turn, gain 1 Strength this turn."
+    ]
+  },
+  "${modID}:SurpassingPowerUpg": {
+    "NAME": "Surpassing+",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP during your turn, gain 1 Strength and 1 Dexterity this turn."
+    ]
+  },
+  "${modID}:MorphingPower": {
+    "NAME": "No One Will Pass",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP during your turn, gain Block."
     ]
   }
 }

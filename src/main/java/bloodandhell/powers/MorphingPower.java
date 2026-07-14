@@ -64,8 +64,9 @@ public class MorphingPower extends AbstractPower {
     }
 
     public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && info.owner == this.owner) {
+        if (damageAmount > 0 && info.owner == this.owner && !AbstractDungeon.actionManager.turnHasEnded) {
             flash();
-            addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));        }
+            addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+        }
     }
 }

@@ -40,7 +40,7 @@ public class WarTactics extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, BLOCK));
+        addToBot(new GainBlockAction(p, p, this.block));
         addToBot((AbstractGameAction)new DiscardPileToTopOfDeckAction((AbstractCreature)p));
     }
 

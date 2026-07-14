@@ -33,7 +33,7 @@ public class NoOneWillPass extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted enemy. m =null si aucun ennemi n'est pointé)
-        addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new MorphingPower(ID, AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
+        addToBot((AbstractGameAction) new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new MorphingPower(bloodandhell.BasicMod.makeID("MorphingPower"), AbstractPower.PowerType.BUFF, false, p, p, this.magicNumber)));
     }
 
     public void upgrade () {
