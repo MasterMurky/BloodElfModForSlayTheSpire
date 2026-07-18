@@ -4,10 +4,10 @@ import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation; // ← Changé : SpriterAnimation → SpineAnimation
 import com.esotericsoftware.spine.AnimationState;
+import bloodandhell.cards.Attacks.SacrificialBlade;
 import bloodandhell.cards.Attacks.Strike;
+import bloodandhell.cards.Skills.BloodRite;
 import bloodandhell.cards.Skills.Defend;
-import bloodandhell.cards.Attacks.HeroicStrike;
-import bloodandhell.cards.Skills.NotToday;
 import bloodandhell.relics.banner;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -72,8 +72,8 @@ public class MyCharacter extends CustomPlayer {
                 new SpineAnimation(ATLAS, JSON, ANIMATION_SCALE)); // ← Spine au lieu de Spriter
 
         initializeClass(null,
-                SHOULDER_2,
                 SHOULDER_1,
+                SHOULDER_2,
                 CORPSE,
                 getLoadout(),
                 20.0F, -20.0F, 200.0F, 250.0F,
@@ -103,8 +103,8 @@ public class MyCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(NotToday.ID);
-        retVal.add(HeroicStrike.ID);
+        retVal.add(SacrificialBlade.ID);
+        retVal.add(BloodRite.ID);
 
         return retVal;
     }

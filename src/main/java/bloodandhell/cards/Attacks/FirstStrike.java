@@ -22,17 +22,16 @@ public class FirstStrike extends BaseCard {
     );
 
     private static final int DAMAGE = 20;
-    private static final int UPG_DAMAGE = 6;
 
-    private static final int BASE_SELF_DAMAGE = 10;  // Valeur initiale avant l'upgrade
-    private static final int UPG_SELF_DAMAGE = 13;  // Valeur après l'upgrade
+    private static final int BASE_SELF_DAMAGE = 10;
 
     private int boostedSelfDamage;  // Dégâts infligés au joueur
 
     public FirstStrike() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
-        this.boostedSelfDamage = BASE_SELF_DAMAGE;  // Initialisation avec la valeur de base
+        setDamage(DAMAGE);
+        setInnate(false, true); // Innée uniquement une fois améliorée.
+        this.boostedSelfDamage = BASE_SELF_DAMAGE;
         updateDescription(false);
         tags.add(CardTags.STRIKE);  // Marque la carte comme une carte de type Strike
     }
@@ -52,8 +51,7 @@ public class FirstStrike extends BaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);
-            this.boostedSelfDamage = UPG_SELF_DAMAGE;  // Mise à jour de la valeur des dégâts infligés au joueur après l'upgrade
+            this.isInnate = true; // Pas de changement de statistiques : seule l'amélioration rend la carte Innée.
             updateDescription(true);
         }
     }

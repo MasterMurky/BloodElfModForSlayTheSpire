@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import bloodandhell.powers.DexterityLossPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 
 public class Ambush extends BaseCard {
@@ -38,7 +38,7 @@ public class Ambush extends BaseCard {
 
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         if (!this.upgraded) {
-            addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new DexterityLossPower(p, this.magicNumber), this.magicNumber));
         }
     }
 

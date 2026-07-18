@@ -32,11 +32,21 @@ public class EmergencyAssault extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < 3; i++) {
-            AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard(); // Récupère la carte du dessus du deck
-            // Vérifie si la carte EmergencyAssault est améliorée et si la carte du dessus n'est pas déjà améliorée
-            if (topCard != null && this.upgraded && topCard.canUpgrade() && !topCard.upgraded) {
-                topCard.upgrade();  // Améliore la carte du dessus si elle peut être améliorée et n'est pas déjà améliorée
-            }
+            // Les 3 PlayTopCardAction sont mises en file et ne s'exécutent pas immédiatement :
+            // vérifier/améliorer la carte du dessus ici, avant qu'aucune n'ait encore été jouée,
+            // reviendrait à regarder 3 fois la même carte. On met donc la vérification elle-même
+            // en file, pour qu'elle s'exécute juste avant chaque PlayTopCardAction correspondante,
+            // une fois les cartes précédentes réellement retirées du drawPile.
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard();
+                    if (topCard != null && upgraded && topCard.canUpgrade() && !topCard.upgraded) {
+                        topCard.upgrade();
+                    }
+                    this.isDone = true;
+                }
+            });
             addToBot(new PlayTopCardAction(
                     AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false
             ));

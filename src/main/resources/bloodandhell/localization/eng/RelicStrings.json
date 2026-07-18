@@ -14,6 +14,37 @@
       " #yStrength."
     ]
   },
+  "BLOODANDHELL:NearDeathWhetstone": {
+    "NAME": "Near-Death Whetstone",
+    "FLAVOR": "Sharpened only by those who have looked death in the eye.",
+    "DESCRIPTIONS": [
+      "If you end combat with less than ",
+      " HP, upgrade 1 random card in your deck."
+    ]
+  },
+  "BLOODANDHELL:MomentumEngine": {
+    "NAME": "Momentum Engine",
+    "FLAVOR": "It never stops turning.",
+    "DESCRIPTIONS": [
+      "Every ",
+      " cards drawn, draw ",
+      " additional cards."
+    ]
+  },
+  "BLOODANDHELL:ParityStones": {
+    "NAME": "Parity Stones",
+    "FLAVOR": "Fate favors even numbers.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, if the tens digit of your current HP is even, gain 1 energy."
+    ]
+  },
+  "BLOODANDHELL:EchoingBlade": {
+    "NAME": "Echoing Blade",
+    "FLAVOR": "Every strike remembers the one before it.",
+    "DESCRIPTIONS": [
+      "Immediately duplicate a random card in your deck."
+    ]
+  },
   "BLOODANDHELL:banner": {
     "NAME": "Bloodstained banner",
     "FLAVOR": "She didn't come here alone.. and this proves it",

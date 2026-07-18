@@ -3,8 +3,8 @@ package bloodandhell.cards.Skills;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import bloodandhell.util.SelfDamageTracker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -44,14 +44,14 @@ public class ColdBlood extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
         addToBot(new GainBlockAction(p, p, this.block));
-        if (GameActionManager.damageReceivedThisTurn > 0) {
+        if (SelfDamageTracker.hasRampage(1)) {
             p.heal(this.magicNumber);
         }
     }
 
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (GameActionManager.damageReceivedThisTurn > 0){
+        if (SelfDamageTracker.hasRampage(1)){
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();}
     }
 

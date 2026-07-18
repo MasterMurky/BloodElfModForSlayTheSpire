@@ -47,25 +47,33 @@ public class DoubleImpactPower extends AbstractPower {
         if (!card.purgeOnUse && (card.type == AbstractCard.CardType.ATTACK || (this.affectsSkills && card.type == AbstractCard.CardType.SKILL))) {
             flash();
 
-            AbstractMonster m = null;
-            if (action.target != null) {
-                m = (AbstractMonster) action.target;
-            }
+            final AbstractMonster m = action.target != null ? (AbstractMonster) action.target : null;
+            final int energyOnUse = card.energyOnUse;
 
-            // Create a copy of the card and play it
-            AbstractCard tmp = card.makeSameInstanceOf();
-            AbstractDungeon.player.limbo.addToBottom(tmp);
-            tmp.current_x = card.current_x;
-            tmp.current_y = card.current_y;
-            tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            tmp.target_y = Settings.HEIGHT / 2.0F;
+            // La copie est créée en file d'attente (et non immédiatement) pour que les cartes qui
+            // modifient leurs propres stats via une action mise en file par leur use() (ex: HeroicStrike,
+            // qui augmente baseDamage après avoir infligé ses dégâts) aient déjà appliqué ce changement
+            // au moment où la copie hérite de leurs stats : sinon la copie se fige sur les valeurs
+            // d'avant boost et inflige les mêmes dégâts (ou moins) que l'original.
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractCard tmp = card.makeSameInstanceOf();
+                    AbstractDungeon.player.limbo.addToBottom(tmp);
+                    tmp.current_x = card.current_x;
+                    tmp.current_y = card.current_y;
+                    tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                    tmp.target_y = Settings.HEIGHT / 2.0F;
 
-            if (m != null) {
-                tmp.calculateCardDamage(m);
-            }
+                    if (m != null) {
+                        tmp.calculateCardDamage(m);
+                    }
 
-            tmp.purgeOnUse = true;  // Delete temp card after use
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
+                    tmp.purgeOnUse = true;  // Delete temp card after use
+                    AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, energyOnUse, true, true), true);
+                    this.isDone = true;
+                }
+            });
         }
     }
 

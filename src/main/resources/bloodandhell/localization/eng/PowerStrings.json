@@ -8,13 +8,13 @@
   "${modID}:CollateralDamagePower": {
     "NAME": "Collateral Damage",
     "DESCRIPTIONS": [
-      "Deal damage to a random enemy whenever you take damage during your turn."
+      "Rampage : Deal damage to a random enemy."
     ]
   },
   "${modID}:RegenerationPower": {
     "NAME": "Regeneration",
     "DESCRIPTIONS": [
-      "Heal whenever you take damage during your turn."
+      "Rampage : Heal."
     ]
   },
   "${modID}:DelayedRegenerationPower": {
@@ -39,19 +39,27 @@
   "${modID}:SurpassingPower": {
     "NAME": "Surpassing",
     "DESCRIPTIONS": [
-      "Whenever you lose HP during your turn, gain 1 Strength this turn."
+      "Rampage : Gain 1 Strength this turn."
     ]
   },
   "${modID}:SurpassingPowerUpg": {
     "NAME": "Surpassing+",
     "DESCRIPTIONS": [
-      "Whenever you lose HP during your turn, gain 1 Strength and 1 Dexterity this turn."
+      "Rampage : Gain 1 Strength and 1 Dexterity this turn."
     ]
   },
   "${modID}:MorphingPower": {
     "NAME": "No One Will Pass",
     "DESCRIPTIONS": [
-      "Whenever you lose HP during your turn, gain Block."
+      "Rampage : Gain Block."
+    ]
+  },
+  "bloodandhell:pilgrimagePower": {
+    "NAME": "Pilgrimage",
+    "DESCRIPTIONS": [
+      "Remove all debuffs in ",
+      "Remove all debuffs at the end of this turn.",
+      " turn(s)."
     ]
   }
 }

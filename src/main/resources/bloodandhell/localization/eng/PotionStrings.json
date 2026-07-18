@@ -16,6 +16,13 @@
       " #yStrength."
     ]
   },
+  "${modID}:VialOfMending": {
+    "NAME": "Vial of Mending",
+    "DESCRIPTIONS": [
+      "Heal ",
+      "% of your missing HP."
+    ]
+  },
   "${modID}:LiquidVitality": {
     "NAME": "Liquid Vitality",
     "DESCRIPTIONS": [

@@ -28,6 +28,9 @@ public class SoldierDefend extends BaseCard {
         super(ID, info);
         setMagic(BLOCK, UPG_BLOCK); // utilise magicNumber comme block
         this.exhaust = true;
+        if (bloodandhell.util.BootCampTracker.active) {
+            upgrade();
+        }
     }
 
     @Override

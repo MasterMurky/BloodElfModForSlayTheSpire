@@ -91,6 +91,7 @@ public class BasicMod implements
     public void receivePostInitialize() {
         registerPotions();
         new bloodandhell.ui.SideCounterUI();
+        new bloodandhell.util.DynamicCostSync();
         //This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
@@ -182,6 +183,13 @@ public class BasicMod implements
     }
 
     private void registerKeyword(KeywordInfo info) {
+        // BaseMod.addKeyword(modID, ...) préfixe chaque nom avec "modID:" avant de l'enregistrer
+        // dans GameDictionary.keywords (ex: "rampage" -> "bloodandhell:rampage"). Mais le moteur
+        // compare le mot BRUT lu dans le texte de la carte à ce dictionnaire, sans préfixe : la
+        // version préfixée seule ne matche donc jamais. On enregistre donc AUSSI les noms tels
+        // quels (sans préfixe) via la surcharge à 2 arguments, AVANT l'appel préfixé (qui mute
+        // le tableau names en place).
+        BaseMod.addKeyword(info.NAMES.clone(), info.DESCRIPTION);
         BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION);
         if (!info.ID.isEmpty())
         {

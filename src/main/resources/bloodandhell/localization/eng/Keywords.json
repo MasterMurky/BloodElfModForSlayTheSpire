@@ -1,23 +1,27 @@
 [
   {
-    "PROPER_NAME": "This is displayed in the tooltip.",
+    "ID": "bloodandhell:Rampage",
+    "PROPER_NAME": "Rampage",
     "NAMES": [
-      "these",
-      "are",
-      "detected",
-      "in",
-      "the",
-      "text"
+      "rampage"
     ],
-    "DESCRIPTION": "This is displayed in the tooltip. Spaces should not be used be avoided in NAMES, with the exception of multi-word keywords (see next entry)."
+    "DESCRIPTION": "Scales with the number of times you have damaged yourself this turn."
   },
   {
-    "PROPER_NAME": "Multiword Keyword",
+    "ID": "bloodandhell:Bloodhunt",
+    "PROPER_NAME": "Bloodhunt",
     "NAMES": [
-      "multiword keyword",
-      "multiword_keyword",
-      "multiword_keywords"
+      "bloodhunt"
     ],
-    "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
+    "DESCRIPTION": "Scales with the total damage you have dealt to yourself this combat."
+  },
+  {
+    "ID": "bloodandhell:Soldier",
+    "PROPER_NAME": "Soldier",
+    "NAMES": [
+      "soldier",
+      "soldiers"
+    ],
+    "DESCRIPTION": "Your army of elf soldiers under your command."
   }
 ]

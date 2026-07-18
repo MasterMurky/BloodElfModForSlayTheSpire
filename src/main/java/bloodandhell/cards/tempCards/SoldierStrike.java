@@ -30,6 +30,9 @@ public class SoldierStrike extends BaseCard {
         setDamage(DMG, UPG_DMG);
         this.exhaust = true;
         tags.add(CardTags.STRIKE); //This tag marks it as a Strike card for the purposes of Perfected Strike and any similar modded effects
+        if (bloodandhell.util.BootCampTracker.active) {
+            upgrade();
+        }
     }
 
     @Override

@@ -3,9 +3,9 @@ package bloodandhell.cards.Skills;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import bloodandhell.util.SelfDamageTracker;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,14 +31,14 @@ public class Frenzy extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (GameActionManager.damageReceivedThisTurn >= 3) {
+        if (SelfDamageTracker.hasRampage(3)) {
             addToBot(new GainEnergyAction(this.magicNumber));
         }
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (GameActionManager.damageReceivedThisTurn < 3) {
+        if (!SelfDamageTracker.hasRampage(3)) {
             this.cantUseMessage = "I didn't take enough damage this turn.";
             return false;
         }
@@ -48,7 +48,7 @@ public class Frenzy extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (GameActionManager.damageReceivedThisTurn >= 3) {
+        if (SelfDamageTracker.hasRampage(3)) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }

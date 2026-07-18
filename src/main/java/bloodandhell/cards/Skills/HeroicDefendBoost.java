@@ -17,9 +17,12 @@ public class HeroicDefendBoost extends AbstractGameAction {
 
     @Override
     public void update() {
-        // La carte qui vient d'être jouée est déjà dans la défausse à ce stade : elle sera
-        // trouvée (et boostée une seule fois) par la boucle sur discardPile ci-dessous.
-        // Ne pas la booster ici séparément, sinon elle est comptée deux fois.
+        // La carte qui vient d'être jouée n'est PAS encore retrouvable dans discardPile/drawPile/hand
+        // à ce stade (le retrait de la main et l'ajout à la défausse ne sont pas synchrones avec
+        // l'exécution de cette action en file d'attente) : il faut donc la booster ici directement,
+        // en plus de la boucle ci-dessous qui couvre les AUTRES exemplaires de la carte.
+        this.card.baseBlock += this.amount;
+        this.card.applyPowers();
 
         // Iterate over discard pile, draw pile, and hand to increase block of all HeroicDefend cards
         Iterator<AbstractCard> iterator;

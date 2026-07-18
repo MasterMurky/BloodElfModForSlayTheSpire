@@ -3,8 +3,8 @@ package bloodandhell.cards.Attacks;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import bloodandhell.util.SelfDamageTracker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -50,14 +50,14 @@ public class BloodyStrike extends BaseCard {
         addToBot(new LoseHPAction(p,p, 1));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot((AbstractGameAction)new DrawCardAction((AbstractCreature)p, 1));
-        if (GameActionManager.damageReceivedThisTurn > 0) {
+        if (SelfDamageTracker.hasRampage(1)) {
             addToBot((AbstractGameAction)new GainEnergyAction(1));
         }
     }
 
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (GameActionManager.damageReceivedThisTurn > 0){
+        if (SelfDamageTracker.hasRampage(1)){
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();}
     }
     //Optional

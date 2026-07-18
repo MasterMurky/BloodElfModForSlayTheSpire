@@ -1,9 +1,6 @@
 package bloodandhell.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SacramentGoldPower extends AbstractPower {
@@ -17,13 +14,12 @@ public class SacramentGoldPower extends AbstractPower {
         this.goldPerKill = goldPerKill;
         this.type = PowerType.BUFF;
         this.isTurnBased = false;
+        this.loadRegion("devotion");
         updateDescription();
     }
 
-    public void onMonsterDeath(AbstractMonster m) {
-        if (m.isDeadOrEscaped()) {
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(goldPerKill));
-        }
+    public int getGoldPerKill() {
+        return goldPerKill;
     }
 
     @Override

@@ -1,4 +1,95 @@
 {
+  "${modID}:CrimsonHarvest": {
+    "NAME": "Crimson Harvest",
+    "DESCRIPTION": "Bloodhunt (15): Can be played. NL Deal !D! damage to ALL enemies. NL They lose !M! Strength.",
+    "UPGRADE_DESCRIPTION": "Bloodhunt (15): Can be played. NL Deal !D! damage to ALL enemies. NL They lose !M! Strength."
+  },
+  "${modID}:PainWard": {
+    "NAME": "Pain Ward",
+    "DESCRIPTION": "Costs 1 less per Rampage. NL Gain !M! Buffer."
+  },
+  "${modID}:BloodhuntsEnd": {
+    "NAME": "Bloodhunt's End",
+    "DESCRIPTION": "Costs 1 less per Bloodhunt. NL Deal damage equal to your Bloodhunt. NL Apply !M! Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less per Bloodhunt. NL Deal damage equal to your Bloodhunt. NL Apply !M! Vulnerable. NL Retain."
+  },
+  "${modID}:SacrificialPlating": {
+    "NAME": "Sacrificial Plating",
+    "DESCRIPTION": "Lose 8 HP. NL Gain !M! Block. NL At the start of your next turn, gain !M! Block again.",
+    "UPGRADE_DESCRIPTION": "Lose 8 HP. NL Gain !M! Block. NL At the start of your next turn, gain !M! Block again."
+  },
+  "${modID}:QuickCuts": {
+    "NAME": "Quick Cuts",
+    "DESCRIPTION": "Rampage (1): Costs 0. NL Deal !D! damage 3 times. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Rampage (1): Costs 0. NL Deal !D! damage 3 times. NL Draw 1 card."
+  },
+  "${modID}:EndlessCycle": {
+    "NAME": "Endless Cycle",
+    "DESCRIPTION": "When drawn, add a copy of this card to your hand. NL Lose 1 HP. Heal 1 HP. NL Draw !M! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "When drawn, add a copy of this card to your hand. NL Lose 1 HP. Heal 1 HP. NL Draw !M! cards. NL Exhaust."
+  },
+  "${modID}:Retaliation": {
+    "NAME": "Retaliation",
+    "DESCRIPTION": "Gain 3 Block per Rampage.",
+    "UPGRADE_DESCRIPTION": "Gain 3 Block per Rampage + 1."
+  },
+  "${modID}:BloodGambit": {
+    "NAME": "Blood Gambit",
+    "DESCRIPTION": "Costs energy equal to your Rampage. NL Heal 2 HP. NL At 1 or more, also inflict Weak 1 to ALL enemies. NL At 2 or more, also gain 13 Block. NL At 3 or more, also gain 1 Buffer.",
+    "UPGRADE_DESCRIPTION": "Costs energy equal to your Rampage. NL Heal 2 HP. NL At 1 or more, also inflict Weak 2 to ALL enemies. NL At 2 or more, also gain 18 Block. NL At 3 or more, also gain 1 Buffer."
+  },
+  "${modID}:DeathMark": {
+    "NAME": "Death Mark",
+    "DESCRIPTION": "Enemy loses 3 Strength this turn. NL When it dies, gain 5 temporary Strength.",
+    "UPGRADE_DESCRIPTION": "Enemy loses 4 Strength this turn. NL When it dies, gain 6 temporary Strength."
+  },
+  "${modID}:WrathSurge": {
+    "NAME": "Wrath Surge",
+    "DESCRIPTION": "At the start of your next turn, gain temporary Strength equal to 2 times the energy spent.",
+    "UPGRADE_DESCRIPTION": "At the start of your next turn, gain temporary Strength equal to 3 times the energy spent."
+  },
+  "${modID}:BloodToll": {
+    "NAME": "Blood Toll",
+    "DESCRIPTION": "Draw 5 cards. NL Gain temporary Strength and Block equal to the combined cost of the drawn cards.",
+    "UPGRADE_DESCRIPTION": "Draw 5 cards. NL Gain temporary Strength and Block equal to the combined cost of the drawn cards. NL Reduce the cost of the drawn cards by 1 for the rest of combat."
+  },
+  "${modID}:BootCamp": {
+    "NAME": "Boot Camp",
+    "DESCRIPTION": "All Soldier cards are upgraded, wherever they are."
+  },
+  "${modID}:RallyTheTroops": {
+    "NAME": "Rally the Troops",
+    "DESCRIPTION": "Whenever you take damage during your turn, add a random Soldier card to your hand."
+  },
+  "${modID}:KeenSenses": {
+    "NAME": "Keen Senses",
+    "DESCRIPTION": "At the start of your turns: NL Bloodhunt (8): draw a card.",
+    "UPGRADE_DESCRIPTION": "At the start of your turns: NL Bloodhunt (5): draw a card."
+  },
+  "${modID}:CursedRegeneration": {
+    "NAME": "Cursed Regeneration",
+    "DESCRIPTION": "At the start of each turn, lose !M! HP then heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, lose !M! HP then heal !M! HP."
+  },
+  "${modID}:VengefulWounds": {
+    "NAME": "Vengeful Wounds",
+    "DESCRIPTION": "Lose 5 HP. NL Gain !M! Thorns.",
+    "UPGRADE_DESCRIPTION": "Lose 5 HP. NL Gain !M! Thorns."
+  },
+  "${modID}:WoundAndMend": {
+    "NAME": "Wound and Mend",
+    "DESCRIPTION": "Lose 3 HP. NL Bloodhunt (10): Heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "Lose 3 HP. NL Bloodhunt (10): Heal !M! HP."
+  },
+  "${modID}:UnfinishedBusiness": {
+    "NAME": "Unfinished Business",
+    "DESCRIPTION": "Lose 1 HP. NL Put a card from your exhaust pile into your hand. NL Exhaust."
+  },
+  "${modID}:BloodRite": {
+    "NAME": "Blood Rite",
+    "DESCRIPTION": "Choose a card in your hand, Exhaust it, and Heal HP equal to !M!x its cost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose a card in your hand, Exhaust it, and Heal HP equal to !M!x its cost. NL Exhaust."
+  },
   "${modID}:ExampleCard": {
     "NAME": "Name",
     "DESCRIPTION": "Description.",
@@ -72,11 +163,11 @@
   },
   "${modID}:ColdBlood": {
     "NAME": "Cold Blood",
-    "DESCRIPTION": "Gain !B! Block. If you have received damage this turn, Heal !M!."
+    "DESCRIPTION": "Gain !B! Block. NL Rampage (1): Heal !M!."
   },
   "${modID}:MagicWave": {
     "NAME": "Magic Wave",
-    "DESCRIPTION": "Deal !D! damage to ALL ennemies. Damage equal to the HP lost this combat."
+    "DESCRIPTION": "Deal !D! damage to ALL ennemies. NL Damage equal to Bloodhunt."
   },
   "${modID}:NoOneWillPass": {
     "NAME": "No One Will Pass",
@@ -89,7 +180,7 @@
   },
   "${modID}:BloodyStrike": {
     "NAME": "Bloody Strike",
-    "DESCRIPTION": "Lose 1HP. Deal !D! damage. Draw 1 card. NL If you have received damage this turn, Gain [E]"
+    "DESCRIPTION": "Lose 1HP. Deal !D! damage. Draw 1 card. NL Rampage (1): Gain [E]"
   },
   "${modID}:Feast": {
     "NAME": "Feast",
@@ -169,8 +260,8 @@
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Can only be played if you have taken 3 or more damage during your turn. NL Gain [E]",
-    "UPGRADE_DESCRIPTION": "Can only be played if you have taken 3 or more damage during your turn. NL Gain [E] [E]"
+    "DESCRIPTION": "Rampage (3): Can be played. NL Gain [E]",
+    "UPGRADE_DESCRIPTION": "Rampage (3): Can be played. NL Gain [E] [E]"
   },
   "${modID}:Purification": {
     "NAME": "Purification",
@@ -208,7 +299,7 @@
   "${modID}:Replenishment": {
     "NAME": "Replenishment",
     "DESCRIPTION": "Draw 2 cards. NL One card containing \"Defend\" in your hand costs 0 until it is played.",
-    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL ALL card containing \"Defend\" in your hand costs 0 until they are played."
+    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL ALL cards containing \"Defend\" in your hand costs 0 until they are played."
   },
   "${modID}:SpikyDefend": {
     "NAME": "Spiky Defend",
@@ -276,8 +367,8 @@
   },
   "${modID}:RejuvenatingBreath": {
     "NAME": "Rejuvenating Breath",
-    "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block."
+    "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block. NL Exhaust."
   },
   "${modID}:BulwarkOfTheTitan": {
     "NAME": "Bulwark of the Titan",

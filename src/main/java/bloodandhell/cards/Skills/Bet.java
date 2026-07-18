@@ -30,7 +30,6 @@ public class Bet extends BaseCard {
     public Bet() {
         super(ID, info);
         setMagic(MN, UPG_MN); // Set the magic number (strength gained) and upgrade increment
-        this.exhaust = true;  // The card will exhaust after being played
     }
 
     public Bet(String ID, CardStats info) {
@@ -65,7 +64,6 @@ public class Bet extends BaseCard {
         if (!this.upgraded) {
             upgradeName(); // Upgrade the card's name
             upgradeMagicNumber(UPG_MN); // Increase the magic number when the card is upgraded
-            this.exhaust = false; // When upgraded, the card no longer exhausts
         }
     }
 

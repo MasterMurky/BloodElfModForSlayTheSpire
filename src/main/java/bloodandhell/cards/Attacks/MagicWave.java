@@ -3,8 +3,8 @@ package bloodandhell.cards.Attacks;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import bloodandhell.util.SelfDamageTracker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -30,13 +30,13 @@ public class MagicWave extends BaseCard {
     public MagicWave() {
         super(ID, info);
         this.isMultiDamage = true; // MultiDMG
-        this.baseDamage = GameActionManager.damageReceivedThisCombat; // Initialize
+        this.baseDamage = SelfDamageTracker.totalDamageThisCombat; // Initialize
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Variable
-        int damageTaken = GameActionManager.damageReceivedThisCombat;
+        int damageTaken = SelfDamageTracker.totalDamageThisCombat;
         this.baseDamage = damageTaken;
 
         // Visuals
@@ -59,11 +59,11 @@ public class MagicWave extends BaseCard {
 
     @Override
     public void applyPowers() {
-        this.baseDamage = GameActionManager.damageReceivedThisCombat;
+        this.baseDamage = SelfDamageTracker.totalDamageThisCombat;
         super.applyPowers();
 
         // Dynamic description
-        this.rawDescription = "Deal (" + this.baseDamage + ") damage to ALL enemies. Damage equal to the HP lost this combat.";
+        this.rawDescription = "Deal (" + this.baseDamage + ") damage to ALL enemies. NL Damage equal to Bloodhunt.";
         initializeDescription();
     }
 

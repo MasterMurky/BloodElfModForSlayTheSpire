@@ -31,6 +31,7 @@ public class RejuvenatingBreath extends BaseCard {
         super(ID, info);
         setMagic(HEAL_AMOUNT, UPGRADE_HEAL);
         setBlock(BLOCK_AMOUNT, UPGRADE_BLOCK);
+        setExhaust(true);
     }
 
     @Override

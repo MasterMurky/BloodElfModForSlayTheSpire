@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import bloodandhell.powers.DexterityLossPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
@@ -36,7 +36,7 @@ public class MobileFortress extends BaseCard {
         // Applique l'armure plaquée
         addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber), this.magicNumber));
         // Réduit la dextérité
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.DEX_LOSS), this.DEX_LOSS));
+        addToBot(new ApplyPowerAction(p, p, new DexterityLossPower(p, this.DEX_LOSS), this.DEX_LOSS));
 
     }
 

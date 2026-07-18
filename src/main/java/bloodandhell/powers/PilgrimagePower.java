@@ -20,7 +20,7 @@ public class PilgrimagePower extends AbstractPower {
         this.amount = turns;
         this.type = AbstractPower.PowerType.BUFF; // Définir le type du pouvoir (si applicable)
         this.isTurnBased = true; // Indiquer si le pouvoir est basé sur le tour
-        this.loadRegion("defaultPower"); // Charger une région d'image par défaut
+        this.loadRegion("path_to_victory");
         updateDescription();
     }
 

@@ -29,6 +29,9 @@ public class NotASoldier extends BaseCard {
         super(ID, info);
         setMagic(HEAL, UPG_HEAL);
         this.exhaust = true;
+        if (bloodandhell.util.BootCampTracker.active) {
+            upgrade();
+        }
     }
 
     @Override

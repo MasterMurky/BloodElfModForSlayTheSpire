@@ -29,6 +29,9 @@ public class SoldierDevotion extends BaseCard {
         super(ID, info);
         setMagic(DRAW, UPG_DRAW); // nombre de cartes piochées
         this.exhaust = true;
+        if (bloodandhell.util.BootCampTracker.active) {
+            upgrade();
+        }
     }
 
     @Override
