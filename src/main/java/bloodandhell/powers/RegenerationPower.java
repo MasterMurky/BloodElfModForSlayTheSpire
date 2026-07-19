@@ -64,7 +64,7 @@ public class RegenerationPower extends AbstractPower {
     }
 
     public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && info.owner == this.owner) {
+        if (damageAmount > 0 && info.owner == this.owner && !AbstractDungeon.actionManager.turnHasEnded) {
             flash();
             AbstractPlayer p = AbstractDungeon.player;
             p.heal(this.amount);

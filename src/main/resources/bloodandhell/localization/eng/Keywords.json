@@ -23,5 +23,22 @@
       "soldiers"
     ],
     "DESCRIPTION": "Your army of elf soldiers under your command."
+  },
+  {
+    "ID": "bloodandhell:Buffer",
+    "PROPER_NAME": "Buffer",
+    "NAMES": [
+      "buffer",
+      "buffers"
+    ],
+    "DESCRIPTION": "Prevents your next HP loss."
+  },
+  {
+    "ID": "bloodandhell:PlatedArmor",
+    "PROPER_NAME": "Plated Armor",
+    "NAMES": [
+      "plated armor"
+    ],
+    "DESCRIPTION": "Like Block, but instead of expiring at the start of your turn, it decreases by 1 whenever you take unblocked attack damage."
   }
 ]

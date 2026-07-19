@@ -12,7 +12,7 @@
   "${modID}:LiquidPain": {
     "NAME": "Liquid Pain",
     "DESCRIPTIONS": [
-      "Lose 10 HP.Gain #b",
+      "Lose 10 HP. Gain #b",
       " #yStrength."
     ]
   },

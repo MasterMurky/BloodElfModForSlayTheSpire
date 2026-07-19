@@ -66,7 +66,7 @@ public class SurpassingPower extends AbstractPower {
     }
 
     public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && info.owner == this.owner) {
+        if (damageAmount > 0 && info.owner == this.owner && !AbstractDungeon.actionManager.turnHasEnded) {
             flash();
             AbstractPlayer p = AbstractDungeon.player;
             addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new StrengthPower((AbstractCreature)p, 1), 1));

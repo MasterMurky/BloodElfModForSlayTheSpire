@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import bloodandhell.powers.RejuvenatingBreathPower;
 
 public class RejuvenatingBreath extends BaseCard {
     public static final String ID = makeID(RejuvenatingBreath.class.getSimpleName());
@@ -32,13 +31,15 @@ public class RejuvenatingBreath extends BaseCard {
         setMagic(HEAL_AMOUNT, UPGRADE_HEAL);
         setBlock(BLOCK_AMOUNT, UPGRADE_BLOCK);
         setExhaust(true);
+        // Dynamic cost (units digit of current HP) is handled every frame by
+        // bloodandhell.util.DynamicCostSync, the same mechanism PainWard/BloodhuntsEnd/
+        // QuickCuts/BloodGambit use -- applying it via a Power at play time (the previous
+        // approach) ran only after the card's own cost had already been charged, and never
+        // actually took effect.
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Appliquer le Power pour recalculer dynamiquement le coût de la carte
-        addToBot(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new RejuvenatingBreathPower(p, this), 1));
-
         // Soigner et ajouter de l'armure
         addToBot(new HealAction(p, p, this.magicNumber));
         addToBot(new GainBlockAction(p, p, this.block));

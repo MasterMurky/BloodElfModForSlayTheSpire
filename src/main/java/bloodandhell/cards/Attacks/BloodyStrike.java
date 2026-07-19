@@ -3,6 +3,7 @@ package bloodandhell.cards.Attacks;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import bloodandhell.util.DeferredCheckAction;
 import bloodandhell.util.SelfDamageTracker;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -50,9 +51,14 @@ public class BloodyStrike extends BaseCard {
         addToBot(new LoseHPAction(p,p, 1));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot((AbstractGameAction)new DrawCardAction((AbstractCreature)p, 1));
-        if (SelfDamageTracker.hasRampage(1)) {
-            addToBot((AbstractGameAction)new GainEnergyAction(1));
-        }
+        // Deferred so the Rampage(1) check runs AFTER the LoseHPAction above has actually
+        // resolved -- checked synchronously here, this card's own "Lose 1 HP" would never count
+        // towards its own Rampage(1) condition.
+        addToBot(new DeferredCheckAction(() -> {
+            if (SelfDamageTracker.hasRampage(1)) {
+                addToBot((AbstractGameAction)new GainEnergyAction(1));
+            }
+        }));
     }
 
     public void triggerOnGlowCheck() {

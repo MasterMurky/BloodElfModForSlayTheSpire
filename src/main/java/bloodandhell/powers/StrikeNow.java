@@ -1,5 +1,6 @@
 package bloodandhell.powers;
 
+import bloodandhell.BasicMod;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -25,7 +26,7 @@ public class StrikeNow extends AbstractCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("StrikeNow");
 
     public StrikeNow() {
-        super("StrikeNow", cardStrings.NAME, "colorless/power/strike_now", -2, cardStrings.DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.NONE);
+        super("StrikeNow", cardStrings.NAME, BasicMod.imagePath("cards/attack/Strike.png"), -2, cardStrings.DESCRIPTION, AbstractCard.CardType.POWER, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.NONE);
         this.baseMagicNumber = 9;
         this.magicNumber = this.baseMagicNumber;
     }

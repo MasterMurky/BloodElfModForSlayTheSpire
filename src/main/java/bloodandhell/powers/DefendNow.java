@@ -1,5 +1,6 @@
 package bloodandhell.powers;
 
+import bloodandhell.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -17,7 +18,7 @@ public class DefendNow extends AbstractCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("DefendNow");
 
     public DefendNow() {
-        super("DefendNow", cardStrings.NAME, "colorless/power/defend_now", -2, cardStrings.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super("DefendNow", cardStrings.NAME, BasicMod.imagePath("cards/skill/Defend.png"), -2, cardStrings.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.baseMagicNumber = 8;
         this.magicNumber = this.baseMagicNumber;
     }

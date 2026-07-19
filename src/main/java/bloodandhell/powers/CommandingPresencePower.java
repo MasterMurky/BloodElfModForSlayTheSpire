@@ -17,11 +17,9 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class CommandingPresencePower extends AbstractPower {
     public static final String POWER_ID = "bloodandhell:CommandingPresencePower";
-    private static final Random rand = new Random();
 
     public CommandingPresencePower(AbstractPlayer owner, int amount) {
         this.ID = POWER_ID;
@@ -60,7 +58,7 @@ public class CommandingPresencePower extends AbstractPower {
         // Choisir les cartes à ajouter
         for (int i = 0; i < amount; i++) {
             AbstractCard card;
-            int roll = rand.nextInt(50); // 1 chance out of 50 for a surprise :)
+            int roll = AbstractDungeon.cardRandomRng.random(49); // 1 chance out of 50 for a surprise :)
 
             if (roll == 0) {
                 card = new NotASoldier();
@@ -71,7 +69,7 @@ public class CommandingPresencePower extends AbstractPower {
                 pool.add(new SoldierDefend());
                 pool.add(new SoldierDevotion());
 
-                card = pool.get(rand.nextInt(pool.size())).makeCopy();
+                card = pool.get(AbstractDungeon.cardRandomRng.random(pool.size() - 1)).makeCopy();
             }
 
             cardsToAdd.add(card);

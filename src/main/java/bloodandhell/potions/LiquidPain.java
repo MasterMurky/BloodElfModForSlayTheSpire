@@ -42,11 +42,16 @@ public class LiquidPain extends BasePotion {
     }
 
     @Override
+    public boolean canUse() {
+        // Combat-only effect (loses HP, gains Strength) -- without this, the potion could be
+        // drunk at a rest site/shop/map and be silently consumed for no effect at all.
+        return AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
+    }
+
+    @Override
     public void use(AbstractCreature target) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            addToBot((AbstractGameAction)new LoseHPAction((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, 10));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, potency), potency));
-        }
+        addToBot((AbstractGameAction)new LoseHPAction((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, 10));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, potency), potency));
     }
     @Override
     public void addAdditionalTips() {

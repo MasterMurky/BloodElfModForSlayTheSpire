@@ -20,14 +20,13 @@ public class Avarice extends BaseCard {
             -1 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    // Montant soigné à chaque itération (X fois, X = énergie dépensée).
+    // Montant soigné à chaque itération (X fois, X = énergie dépensée, +1 fois si améliorée).
     private static final int MN = 2;
-    private static final int UPG_MN = 1;
 
     public Avarice() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-        setMagic(MN, UPG_MN);
-        setExhaust(true, false); // L'amélioration retire l'Exhaust (voir UPGRADE_DESCRIPTION).
+        setMagic(MN);
+        setExhaust(true);
     }
 
     public Avarice(String ID, CardStats info) {
@@ -36,14 +35,18 @@ public class Avarice extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        bloodandhell.BasicMod.logger.info("=== AVARICE DEBUG === cost=" + this.cost
-                + " costForTurn=" + this.costForTurn
-                + " energyOnUse=" + this.energyOnUse
-                + " currentEnergy=" + com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.energy.energy);
-        for (int i = 0; i < this.energyOnUse; i++) {
+        int times = this.energyOnUse + (this.upgraded ? 1 : 0);
+        for (int i = 0; i < times; i++) {
             addToBot(new LoseHPAction(p, p, 1));
             addToBot(new HealAction(p, p, this.magicNumber));
             addToBot(new GainEnergyAction(1));
+        }
+    }
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
         }
     }
 

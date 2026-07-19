@@ -66,7 +66,7 @@ public class CollateralDamagePower extends AbstractPower {
 
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && info.owner == this.owner) {
+        if (damageAmount > 0 && info.owner == this.owner && !AbstractDungeon.actionManager.turnHasEnded) {
             flash();
             addToTop(new DamageRandomEnemyAction(
                     new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS),

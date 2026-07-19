@@ -41,7 +41,7 @@ public class ThirstForPower extends BaseCard {
             return; // Pas de carte Pouvoir disponible dans le pool : rien à faire.
         }
         AbstractCard c = picked.makeCopy();
-        int  cost = c.cost;
+        int cost = Math.max(0, c.cost); // guards against a hypothetical X-cost (-1/-2) Power
         addToBot(new LoseHPAction(p, p, cost));
         c.setCostForTurn(0);
         addToBot((AbstractGameAction)new MakeTempCardInHandAction(c, true));

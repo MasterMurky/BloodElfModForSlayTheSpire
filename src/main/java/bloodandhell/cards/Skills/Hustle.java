@@ -30,8 +30,6 @@ public class Hustle extends BaseCard {
     public Hustle() {
         super(ID, info);
         setMagic(STRENGTH, UPGRADE_PLAYER_STRENGTH);
-        // this.rawDescription = "Inflige 1 dégât à vous et tous les ennemis. Donne 1 de Force temporaire à vous et à tous les ennemis."; // Description par défaut
-        initializeDescription();
     }
 
     @Override
@@ -62,7 +60,7 @@ public class Hustle extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            this.rawDescription = "Everyone takes 1 damage. NL You gain 2 temporary Strength and the ennemies gain 1.";
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

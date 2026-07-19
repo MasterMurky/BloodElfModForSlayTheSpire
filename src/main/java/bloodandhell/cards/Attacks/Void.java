@@ -38,19 +38,32 @@ public class Void extends BaseCard {
         setMagic(MN, UPG_MN);
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
-        int nb_damage = (p.maxHealth - p.currentHealth) / this.magicNumber; // If my character has 80 HP max and is now at 60HP, you deal (80-60)/4 = 5. e.g : if you are at 10 HP : (80-10)/3 = 23
-        addToBot(new DamageAction(m, new DamageInfo(p, nb_damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH)); //(1er paramètre = la cible à laquelle infliger des dégâts), DamageInfo (source des dégâts, amount et type de dégâts)
+    // Recomputes baseDamage from current missing HP so calculateCardDamage()/applyPowers() can
+    // then run the normal engine pipeline (Strength, relics, etc.) on top of it, instead of
+    // building the dealt damage by hand and skipping that pipeline entirely.
+    private void refreshBaseDamage() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p != null) {
+            this.baseDamage = (p.maxHealth - p.currentHealth) / this.magicNumber;
+        }
     }
 
     @Override
-    public void applyPowers(){
-        AbstractPlayer p = AbstractDungeon.player;
-        int nb_damage = (p.maxHealth - p.currentHealth) / this.magicNumber;
-        this.rawDescription = "Deal (" + nb_damage + ") damage to an enemy. Damage equal your missing HP ÷ !M!. ";
-        initializeDescription();
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        this.calculateCardDamage(m); // refresh this.damage (Strength-adjusted) against the actual target
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
+    }
 
+    @Override
+    public void applyPowers() {
+        refreshBaseDamage();
+        super.applyPowers();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        refreshBaseDamage();
+        super.calculateCardDamage(m);
     }
 
     //Optional

@@ -26,8 +26,11 @@ public class Pilgrimage extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Appliquer PilgrimagePower pour 1 tour
-        addToBot(new ApplyPowerAction(p, p, new PilgrimagePower(p, 1), 1));
+        // PilgrimagePower removes debuffs the first time its atEndOfTurn fires with amount==1.
+        // Starting at 2 turns means: end of THIS turn -> amount 2->1 (no removal yet), end of
+        // NEXT turn -> amount==1 -> removal fires. Starting at 1 would remove debuffs at the
+        // end of the same turn Pilgrimage was played, one turn too early.
+        addToBot(new ApplyPowerAction(p, p, new PilgrimagePower(p, 2), 2));
     }
 
     public void upgrade() {

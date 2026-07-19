@@ -35,7 +35,7 @@ public class Replenishment extends BaseCard {
                 // Only 1
                 if (!upgraded) {
                     for (AbstractCard card : p.hand.group) {
-                        if (card.name.contains("Defend") && !card.freeToPlayOnce) {
+                        if (card.cardID.contains("Defend") && !card.freeToPlayOnce) {
                             card.freeToPlayOnce = true;
                             break;
                         }
@@ -43,7 +43,7 @@ public class Replenishment extends BaseCard {
                 } else {
                     // All of them (no break)
                     for (AbstractCard card : p.hand.group) {
-                        if (card.name.contains("Defend") && !card.freeToPlayOnce) {
+                        if (card.cardID.contains("Defend") && !card.freeToPlayOnce) {
                             card.freeToPlayOnce = true;
                         }
                     }

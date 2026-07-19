@@ -34,7 +34,7 @@ public class DoubleImpact extends BaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.rawDescription = "All Attacks and Spells you play this turn are played twice.";
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

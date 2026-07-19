@@ -44,14 +44,14 @@ public class ColdBlood extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
         addToBot(new GainBlockAction(p, p, this.block));
-        if (SelfDamageTracker.hasRampage(1)) {
+        if (SelfDamageTracker.hasRampage(2)) {
             p.heal(this.magicNumber);
         }
     }
 
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (SelfDamageTracker.hasRampage(1)){
+        if (SelfDamageTracker.hasRampage(2)){
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();}
     }
 

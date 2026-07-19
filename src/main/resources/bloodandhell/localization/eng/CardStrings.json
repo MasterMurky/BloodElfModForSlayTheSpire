@@ -5,7 +5,7 @@
     "UPGRADE_DESCRIPTION": "Bloodhunt (15): Can be played. NL Deal !D! damage to ALL enemies. NL They lose !M! Strength."
   },
   "${modID}:PainWard": {
-    "NAME": "Pain Ward",
+    "NAME": "Theophany",
     "DESCRIPTION": "Costs 1 less per Rampage. NL Gain !M! Buffer."
   },
   "${modID}:BloodhuntsEnd": {
@@ -25,8 +25,8 @@
   },
   "${modID}:EndlessCycle": {
     "NAME": "Endless Cycle",
-    "DESCRIPTION": "When drawn, add a copy of this card to your hand. NL Lose 1 HP. Heal 1 HP. NL Draw !M! card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "When drawn, add a copy of this card to your hand. NL Lose 1 HP. Heal 1 HP. NL Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "When drawn, add a copy of this card to your hand. NL Lose !M! HP. Heal !M! HP. NL Draw 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "When drawn, add a copy of this card to your hand. NL Lose !M! HP. Heal !M! HP. NL Draw 1 card. NL Exhaust."
   },
   "${modID}:Retaliation": {
     "NAME": "Retaliation",
@@ -39,12 +39,12 @@
     "UPGRADE_DESCRIPTION": "Costs energy equal to your Rampage. NL Heal 2 HP. NL At 1 or more, also inflict Weak 2 to ALL enemies. NL At 2 or more, also gain 18 Block. NL At 3 or more, also gain 1 Buffer."
   },
   "${modID}:DeathMark": {
-    "NAME": "Death Mark",
+    "NAME": "Anathema",
     "DESCRIPTION": "Enemy loses 3 Strength this turn. NL When it dies, gain 5 temporary Strength.",
     "UPGRADE_DESCRIPTION": "Enemy loses 4 Strength this turn. NL When it dies, gain 6 temporary Strength."
   },
   "${modID}:WrathSurge": {
-    "NAME": "Wrath Surge",
+    "NAME": "Controlled Wrath",
     "DESCRIPTION": "At the start of your next turn, gain temporary Strength equal to 2 times the energy spent.",
     "UPGRADE_DESCRIPTION": "At the start of your next turn, gain temporary Strength equal to 3 times the energy spent."
   },
@@ -82,7 +82,7 @@
     "UPGRADE_DESCRIPTION": "Lose 3 HP. NL Bloodhunt (10): Heal !M! HP."
   },
   "${modID}:UnfinishedBusiness": {
-    "NAME": "Unfinished Business",
+    "NAME": "Scavenger",
     "DESCRIPTION": "Lose 1 HP. NL Put a card from your exhaust pile into your hand. NL Exhaust."
   },
   "${modID}:BloodRite": {
@@ -106,7 +106,7 @@
   },
   "${modID}:BloodPact": {
     "NAME": "Blood Pact",
-    "DESCRIPTION": "Lose !${modID}:hpLoss! HP. NL Heal !${modID}:hpGain! HP at the start of your next 3 turns."
+    "DESCRIPTION": "Ethereal. NL Lose !${modID}:hpLoss! HP. NL Heal !${modID}:hpGain! HP at the start of your next 3 turns."
   },
   "${modID}:NotToday": {
     "NAME": "Not Today",
@@ -130,7 +130,7 @@
   },
   "${modID}:EternalAegis": {
     "NAME": "Eternal Aegis",
-    "DESCRIPTION": "Lose !${modID}:HPLost! HP. NL Prevent the next !M! times you would lose HP."
+    "DESCRIPTION": "Lose !${modID}:HPLost! HP. NL Gain !M! Buffer."
   },
   "${modID}:PropheticWritings": {
     "NAME": "Prophetic Writings",
@@ -143,7 +143,7 @@
   },
   "${modID}:Injury": {
     "NAME": "Injury",
-    "DESCRIPTION": "Lose 1HP, do this action 3 times. NL Heal !M! HP"
+    "DESCRIPTION": "Lose 1 HP, do this action 3 times. NL Heal !M! HP."
   },
   "${modID}:Regeneration": {
     "NAME": "Regeneration",
@@ -159,15 +159,15 @@
   },
   "${modID}:BloodyArmor": {
     "NAME": "Bloody Armor",
-    "DESCRIPTION": "Lose 1 HP. Gain 5 armor. Do these actions !M! times."
+    "DESCRIPTION": "Lose 1 HP. Gain 5 Block. Do these actions !M! times."
   },
   "${modID}:ColdBlood": {
     "NAME": "Cold Blood",
-    "DESCRIPTION": "Gain !B! Block. NL Rampage (1): Heal !M!."
+    "DESCRIPTION": "Gain !B! Block. NL Rampage (2): Heal !M!."
   },
   "${modID}:MagicWave": {
     "NAME": "Magic Wave",
-    "DESCRIPTION": "Deal !D! damage to ALL ennemies. NL Damage equal to Bloodhunt."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Damage equal to Bloodhunt."
   },
   "${modID}:NoOneWillPass": {
     "NAME": "No One Will Pass",
@@ -180,7 +180,7 @@
   },
   "${modID}:BloodyStrike": {
     "NAME": "Bloody Strike",
-    "DESCRIPTION": "Lose 1HP. Deal !D! damage. Draw 1 card. NL Rampage (1): Gain [E]"
+    "DESCRIPTION": "Lose 1 HP. Deal !D! damage. Draw 1 card. NL Rampage (1): Gain [E]."
   },
   "${modID}:Feast": {
     "NAME": "Feast",
@@ -192,7 +192,7 @@
   },
   "${modID}:Void": {
     "NAME": "Void",
-    "DESCRIPTION": "Deal X damage to an enemy. X equal your missing HP ÷ !M!.",
+    "DESCRIPTION": "Deal !D! damage to an enemy. NL Damage is equal to your missing HP ÷ !M!.",
     "EXTENDED_DESCRIPTION": [
       "Damages are rounded down."
     ]
@@ -203,7 +203,7 @@
   },
   "${modID}:Choice": {
     "NAME": "Choice",
-    "DESCRIPTION": "Choose : Deal !D! damage to a random enemy or Gain !B! Block."
+    "DESCRIPTION": "Choose: Deal !D! damage to a random enemy or Gain !B! Block."
   },
   "${modID}:StrikeNow": {
     "NAME": "Strike Now",
@@ -215,7 +215,7 @@
   },
   "${modID}:Cloning": {
     "NAME": "Cloning",
-    "DESCRIPTION": "Create !M! copies of the last card you played and put them in your hand. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Create !M! copies of the last card you played and put them in your hand. NL Exhaust."
   },
   "${modID}:Unsheathe": {
     "NAME": "Unsheathe",
@@ -242,8 +242,8 @@
   },
   "${modID}:Avarice": {
     "NAME": "Avarice",
-    "DESCRIPTION": "Lose 1HP, Heal !M! HP, Gain 1 [E] , X times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose 1HP, Heal !M! HP, Gain 1 [E] , X times."
+    "DESCRIPTION": "Lose 1 HP, Heal !M! HP, Gain 1 [E], X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose 1 HP, Heal !M! HP, Gain 1 [E], X+1 times. NL Exhaust."
   },
   "${modID}:Correction": {
     "NAME": "Correction",
@@ -251,8 +251,8 @@
   },
   "${modID}:Saga": {
     "NAME": "Saga",
-    "DESCRIPTION": "Lose 2HP. Draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Lose 2HP. Draw !M! cards."
+    "DESCRIPTION": "Lose 2 HP. Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Lose 2 HP. Draw !M! cards."
   },
   "${modID}:HeroicDefend": {
     "NAME": "Heroic Defend",
@@ -260,8 +260,8 @@
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Rampage (3): Can be played. NL Gain [E]",
-    "UPGRADE_DESCRIPTION": "Rampage (3): Can be played. NL Gain [E] [E]"
+    "DESCRIPTION": "Rampage (3): Can be played. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "Rampage (3): Can be played. NL Gain [E] [E]."
   },
   "${modID}:Purification": {
     "NAME": "Purification",
@@ -281,11 +281,12 @@
   },
   "${modID}:DoubleImpact": {
     "NAME": "Double Impact",
-    "DESCRIPTION": "All Attacks you play this turn are played twice."
+    "DESCRIPTION": "All Attacks you play this turn are played twice.",
+    "UPGRADE_DESCRIPTION": "All Attacks and Skills you play this turn are played twice."
   },
   "${modID}:Riptide": {
     "NAME": "Riptide",
-    "DESCRIPTION": "Deal !D! damage to ALL ennemies !M! times."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
   "${modID}:Exposure": {
     "NAME": "Exposure",
@@ -299,7 +300,7 @@
   "${modID}:Replenishment": {
     "NAME": "Replenishment",
     "DESCRIPTION": "Draw 2 cards. NL One card containing \"Defend\" in your hand costs 0 until it is played.",
-    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL ALL cards containing \"Defend\" in your hand costs 0 until they are played."
+    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL ALL cards containing \"Defend\" in your hand cost 0 until they are played."
   },
   "${modID}:SpikyDefend": {
     "NAME": "Spiky Defend",
@@ -311,7 +312,8 @@
   },
   "${modID}:Hustle": {
     "NAME": "Hustle",
-    "DESCRIPTION": "Everyone takes 1 damage and Gains !M! temporary Strength ."
+    "DESCRIPTION": "Everyone takes 1 damage and gains !M! temporary Strength.",
+    "UPGRADE_DESCRIPTION": "Everyone takes 1 damage. NL You gain !M! temporary Strength; enemies gain 1."
   },
   "${modID}:ExecutionStrike": {
     "NAME": "Execution Strike",
@@ -321,7 +323,7 @@
   "${modID}:FirstStrike": {
     "NAME": "First Strike",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself."
+    "UPGRADE_DESCRIPTION": "Innate. NL Deal !D! damage. NL If the enemy is not at full HP, also deal !SD! damage to yourself."
   },
   "${modID}:ArmyOfSoldiers": {
     "NAME": "Army of Soldiers",
@@ -340,7 +342,7 @@
     "DESCRIPTION": "Draw !M! cards. NL Exhaust."
   },
   "${modID}:NotASoldier": {
-    "NAME": "Not a Soldier ?",
+    "NAME": "Not a Soldier?",
     "DESCRIPTION": "Heal !M! HP. NL Exhaust."
   },
   "${modID}:CommandingPresence": {
@@ -350,7 +352,7 @@
   },
   "${modID}:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Gain 1 [E]. NL Upgrade a card in your hand for the rest of the combat. NL Gain 1 Temporary Dexterity.",
+    "DESCRIPTION": "Gain 1 [E]. NL Upgrade a card in your hand for the rest of the combat. NL Gain 1 temporary Dexterity.",
     "UPGRADE_DESCRIPTION": "Gain 1 [E]. NL Upgrade a card in your hand for the rest of the combat. NL Gain 1 Dexterity."
   },
   "${modID}:ClumsyStrike": {
@@ -363,7 +365,7 @@
   },
   "${modID}:Catharsis": {
     "NAME": "Catharsis",
-    "DESCRIPTION": "Reset the Strength and Dexterity modificators to 0."
+    "DESCRIPTION": "Reset your Strength and Dexterity modifiers to 0."
   },
   "${modID}:RejuvenatingBreath": {
     "NAME": "Rejuvenating Breath",
@@ -377,6 +379,14 @@
   },
   "${modID}:Sacrament": {
     "NAME": "Sacrament",
-    "DESCRIPTION": "Gain !M! Gold. Gain 5 more Gold whenever an enemy dies this combat"
+    "DESCRIPTION": "Gain !M! Gold. Gain 5 more Gold whenever an enemy dies this combat."
+  },
+  "${modID}:Energy": {
+    "NAME": "Energy",
+    "DESCRIPTION": "[TEST] Gain 20 Energy."
+  },
+  "${modID}:Damage": {
+    "NAME": "Damage",
+    "DESCRIPTION": "[TEST] Lose 20 HP."
   }
 }

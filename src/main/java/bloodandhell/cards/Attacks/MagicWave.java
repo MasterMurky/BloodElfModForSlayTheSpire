@@ -35,9 +35,11 @@ public class MagicWave extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Variable
-        int damageTaken = SelfDamageTracker.totalDamageThisCombat;
-        this.baseDamage = damageTaken;
+        // Refresh baseDamage/damage from the current Bloodhunt total right before resolving,
+        // so the dealt damage reflects Strength/other power bonuses (this.damage), not the raw
+        // tracker value.
+        this.baseDamage = SelfDamageTracker.totalDamageThisCombat;
+        this.applyPowers();
 
         // Visuals
         addToBot((AbstractGameAction)new SFXAction("ATTACK_PIERCING_WAIL"));
@@ -47,10 +49,12 @@ public class MagicWave extends BaseCard {
             addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.PURPLE_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.5F));
         }
 
-        // Damage all the ennemies
+        // Damage all the enemies. DamageInfo.createDamageMatrix(amount, true) does NOT apply
+        // powers itself (that's what the "true" flag skips) -- it expects the already
+        // powers-adjusted value, hence this.damage rather than the raw tracker total.
         addToBot(new DamageAllEnemiesAction(
                 p,
-                DamageInfo.createDamageMatrix(damageTaken, true),
+                DamageInfo.createDamageMatrix(this.damage, true),
                 DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.NONE
         ));
@@ -61,10 +65,6 @@ public class MagicWave extends BaseCard {
     public void applyPowers() {
         this.baseDamage = SelfDamageTracker.totalDamageThisCombat;
         super.applyPowers();
-
-        // Dynamic description
-        this.rawDescription = "Deal (" + this.baseDamage + ") damage to ALL enemies. NL Damage equal to Bloodhunt.";
-        initializeDescription();
     }
 
     @Override

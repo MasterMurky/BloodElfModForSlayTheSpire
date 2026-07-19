@@ -30,7 +30,7 @@ public class StrategicStrikesPower extends AbstractPower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.name.contains("Strike")) {
+        if (card.cardID.contains("Strike")) {
             this.flash();
             this.addToBot(new DrawCardAction(this.owner, this.amount));
         }

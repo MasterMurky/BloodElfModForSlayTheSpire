@@ -11,11 +11,11 @@ import bloodandhell.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class ArmyOfSoldiers extends BaseCard {
     public static final String ID = makeID(ArmyOfSoldiers.class.getSimpleName());
@@ -39,11 +39,9 @@ public class ArmyOfSoldiers extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Random rng = new Random();
-
         for (int i = 0; i < this.magicNumber; i++) {
             AbstractCard card;
-            int roll = rng.nextInt(50); //  0 a 49
+            int roll = AbstractDungeon.cardRandomRng.random(49); //  0 a 49
 
             if (roll == 0) {
                 card = new NotASoldier(); //
@@ -53,7 +51,7 @@ public class ArmyOfSoldiers extends BaseCard {
                 pool.add(new SoldierDefend());
                 pool.add(new SoldierDevotion());
 
-                card = pool.get(rng.nextInt(pool.size())).makeCopy();
+                card = pool.get(AbstractDungeon.cardRandomRng.random(pool.size() - 1)).makeCopy();
             }
 
             addToBot(new MakeTempCardInHandAction(card, 1));
