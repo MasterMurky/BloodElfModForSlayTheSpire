@@ -45,8 +45,8 @@
   },
   "${modID}:WrathSurge": {
     "NAME": "Controlled Wrath",
-    "DESCRIPTION": "At the start of your next turn, gain temporary Strength equal to 2 times the energy spent.",
-    "UPGRADE_DESCRIPTION": "At the start of your next turn, gain temporary Strength equal to 3 times the energy spent."
+    "DESCRIPTION": "At the start of your next turn, gain X temporary Strength. NL X is equal to 3 times the energy spent.",
+    "UPGRADE_DESCRIPTION": "At the start of your next turn, gain X temporary Strength. NL X is equal to 4 times the energy spent."
   },
   "${modID}:BloodToll": {
     "NAME": "Blood Toll",
@@ -368,7 +368,7 @@
     "DESCRIPTION": "Reset your Strength and Dexterity modifiers to 0."
   },
   "${modID}:RejuvenatingBreath": {
-    "NAME": "Rejuvenating Breath",
+    "NAME": "Vital Breath",
     "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block. NL Exhaust."
   },

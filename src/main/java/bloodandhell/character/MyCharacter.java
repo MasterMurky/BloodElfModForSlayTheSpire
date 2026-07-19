@@ -34,7 +34,7 @@ import static bloodandhell.BasicMod.makeID;
 
 public class MyCharacter extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3;
-    public static final int MAX_HP = 78;
+    public static final int MAX_HP = 70;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -47,6 +47,29 @@ public class MyCharacter extends CustomPlayer {
     private static final String SHOULDER_1 = characterPath("shoulder.png");
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
     private static final String CORPSE = characterPath("corpse.png");
+
+    // Orbe d'énergie custom : recoloration en rouge pur des calques vanilla de l'Ironclad
+    // (qui contiennent du jaune/orange, d'où l'aspect "flamme" plutôt que rouge sang avec
+    // new CustomEnergyOrb(null, null, null), qui réutilise ces calques vanilla tels quels).
+    // Format attendu par CustomEnergyOrb : [energy1..energy5, base, noEnergy1..noEnergy5].
+    private static final String[] ENERGY_ORB_LAYERS = {
+            characterPath("energyorb/layer1.png"),
+            characterPath("energyorb/layer2.png"),
+            characterPath("energyorb/layer3.png"),
+            characterPath("energyorb/layer4.png"),
+            characterPath("energyorb/layer5.png"),
+            characterPath("energyorb/layer6.png"),
+            characterPath("energyorb/layer1d.png"),
+            characterPath("energyorb/layer2d.png"),
+            characterPath("energyorb/layer3d.png"),
+            characterPath("energyorb/layer4d.png"),
+            characterPath("energyorb/layer5d.png"),
+    };
+    private static final String ENERGY_ORB_VFX = characterPath("energyorb/vfx.png");
+    // Vitesses de rotation des 5 calques (degrés/s, divisées par 4 en interne par le moteur).
+    // Par défaut (passer null) le jeu utilise [-20, 20, -40, 40, 360] -- le dernier calque en
+    // particulier tournait bien trop vite sur les bords. Réduit ici à un tiers environ.
+    private static final float[] ENERGY_ORB_SPEEDS = {-7f, 7f, -13f, 13f, 110f};
 
     // ↓ Chemins vers les fichiers Spine exportés depuis DragonBones
     private static final String ATLAS = characterPath("animation/skeleton.atlas");
@@ -68,7 +91,7 @@ public class MyCharacter extends CustomPlayer {
 
     public MyCharacter() {
         super(NAMES[0], Enums.TORMENTED_ONE,
-                new CustomEnergyOrb(null, null, null),
+                new CustomEnergyOrb(ENERGY_ORB_LAYERS, ENERGY_ORB_VFX, ENERGY_ORB_SPEEDS),
                 new SpineAnimation(ATLAS, JSON, ANIMATION_SCALE)); // ← Spine au lieu de Spriter
 
         initializeClass(null,

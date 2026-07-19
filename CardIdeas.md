@@ -33,7 +33,7 @@ Idée : améliorer sa force de façon significative en se donnant des buffs temp
 
 ## Reste à faire
 orbe énergie animée en rouge
-cartes à débloquer avec les levels --> contenu débloquable, envie de progresser :D
+cartes à débloquer avec les levels --> contenu débloquable, envie de progresser :D --> a verifier dans des runs fresh une fois le mod publié
 changer animation attack, satisfaisante rouge slashing
 void : animation stylée, mauve
 correction : un truc qui ressemble à un punch

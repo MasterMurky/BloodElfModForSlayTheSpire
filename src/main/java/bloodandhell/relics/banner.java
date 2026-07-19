@@ -53,7 +53,7 @@ public class banner extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         if (DESCRIPTIONS == null || DESCRIPTIONS.length == 0) {
-            return "At the end of combat, if your HP digit in the tens place is even, one of your card rewards is upgraded. If it's odd, Gain a potion that raises your max HP by 2 and heals 1 HP when consumed.";
+            return "At the end of combat, if your HP digit in the tens place is even, one of your card rewards is upgraded. If it's odd, gain a Liquid Vitality.";
         }
         return DESCRIPTIONS[0];
     }
