@@ -11,9 +11,10 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
+import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 
 public class Void extends BaseCard {
     public static final String ID = makeID(Void.class.getSimpleName());
@@ -51,7 +52,9 @@ public class Void extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.calculateCardDamage(m); // refresh this.damage (Strength-adjusted) against the actual target
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
+        if (m != null)
+            addToBot(new VFXAction(new ClawEffect(m.hb.cX, m.hb.cY, Color.PURPLE, Color.PURPLE), 0.1F));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

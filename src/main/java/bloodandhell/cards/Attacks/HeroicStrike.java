@@ -3,7 +3,6 @@ package bloodandhell.cards.Attacks;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,7 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
+import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
 
 public class HeroicStrike extends BaseCard {
     public static final String ID = makeID(HeroicStrike.class.getSimpleName());
@@ -46,7 +45,7 @@ public class HeroicStrike extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  //Dans use, p = player et m = targeted ennemy. m =null si aucun ennemi n'est pointé)
         if (m != null)
-            addToBot((AbstractGameAction) new VFXAction((AbstractGameEffect) new ClawEffect(m.hb.cX, m.hb.cY, Color.PURPLE, Color.WHITE), 0.1F)); //L'animation visuelle
+            addToBot((AbstractGameAction) new VFXAction((AbstractGameEffect) new GoldenSlashEffect(m.hb.cX, m.hb.cY, true), 0.1F)); //L'animation visuelle
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL))); //(1er paramètre = la cible à laquelle infliger des dégâts), DamageInfo (source des dégâts, amount et type de dégâts)
         addToBot(new HeroicStrikeBOOST(this, this.magicNumber));

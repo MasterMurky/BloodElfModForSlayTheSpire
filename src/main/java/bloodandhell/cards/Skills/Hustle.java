@@ -3,15 +3,18 @@ package bloodandhell.cards.Skills;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 public class Hustle extends BaseCard {
     public static final String ID = makeID(Hustle.class.getSimpleName());
@@ -34,6 +37,8 @@ public class Hustle extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Onde de choc centrée sur le joueur pour vendre le "tout le monde encaisse" d'un coup.
+        addToBot(new VFXAction(new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.RED_TEXT_COLOR, ShockWaveEffect.ShockWaveType.NORMAL), 0.2F));
         addToBot(new DamageAction(p, new DamageInfo(p, DAMAGE, DamageInfo.DamageType.THORNS)));
 
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {

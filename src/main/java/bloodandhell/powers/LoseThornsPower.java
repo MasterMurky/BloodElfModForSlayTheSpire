@@ -1,6 +1,9 @@
 package bloodandhell.powers;
 
+import bloodandhell.util.GeneralUtils;
 import bloodandhell.util.TextureLoader;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +13,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class LoseThornsPower extends AbstractPower {
-    public static final String POWER_ID = "bloodandhell:LoseThornsPower";
+    public static final String POWER_ID = bloodandhell.BasicMod.makeID("LoseThornsPower");
     public static final PowerType POWER_TYPE = PowerType.DEBUFF;
 
     public LoseThornsPower(AbstractCreature owner, int amount) {
@@ -20,15 +23,22 @@ public class LoseThornsPower extends AbstractPower {
         this.amount = amount;
 
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;
-        this.description = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS[0] + this.amount + CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS[1];
+        updateDescription();
 
-        this.setImage("bloodandhell/images/powers/ThornsDown84.png", "bloodandhell/images/powers/ThornsDown32.png"); // problème visuel à fix
-    }
-
-    private void setImage(String largeImagePath, String smallImagePath) {
-        this.img = TextureLoader.getTexture(largeImagePath);
-        this.region128 = new com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion(this.img, 0, 0, 84, 84);
-        this.region48 = new com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion(TextureLoader.getTexture(smallImagePath), 0, 0, 32, 32);
+        // Même schéma de chargement que DexterityLossPower : quand la version large/ existe,
+        // this.img reste null -- l'assigner (ancien code) faisait dessiner la texture 84x84 à
+        // taille native sous le joueur, d'où une icône géante.
+        String unPrefixed = GeneralUtils.removePrefix(POWER_ID);
+        Texture normalTexture = TextureLoader.getPowerTextureNull(unPrefixed);
+        Texture hiDefImage = TextureLoader.getHiDefPowerTexture(unPrefixed);
+        if (hiDefImage != null) {
+            region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
+            if (normalTexture != null)
+                region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+        } else if (normalTexture != null) {
+            this.img = normalTexture;
+            region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+        }
     }
 
     @Override

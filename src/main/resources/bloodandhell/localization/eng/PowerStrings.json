@@ -8,7 +8,7 @@
   "${modID}:CollateralDamagePower": {
     "NAME": "Collateral Damage",
     "DESCRIPTIONS": [
-      "Rampage: Deal damage to a random enemy."
+      "Whenever you lose HP during your turn, deal %d damage to a random enemy."
     ]
   },
   "${modID}:RegenerationPower": {
@@ -33,7 +33,13 @@
   "${modID}:FacingDestinyPower": {
     "NAME": "Facing Destiny",
     "DESCRIPTIONS": [
-      "Immune to damage for %d more turn(s). NL At the end of combat, heal %d HP."
+      "Immune to damage for %d more turn(s)."
+    ]
+  },
+  "${modID}:FacingDestinyHealPower": {
+    "NAME": "Facing Destiny",
+    "DESCRIPTIONS": [
+      "At the end of combat, heal %d HP."
     ]
   },
   "${modID}:SurpassingPower": {
@@ -54,12 +60,92 @@
       "Rampage: Gain Block."
     ]
   },
-  "bloodandhell:pilgrimagePower": {
+  "${modID}:pilgrimagePower": {
     "NAME": "Pilgrimage",
     "DESCRIPTIONS": [
       "Remove all debuffs in ",
       "Remove all debuffs at the end of this turn.",
       " turn(s)."
+    ]
+  },
+  "${modID}:BootCampPower": {
+    "NAME": "Boot Camp",
+    "DESCRIPTIONS": [
+      "All Soldier cards are upgraded, wherever they are."
+    ]
+  },
+  "${modID}:CursedRegenerationPower": {
+    "NAME": "Cursed Regeneration",
+    "DESCRIPTIONS": [
+      "At the start of each turn, lose %d HP then heal %d HP."
+    ]
+  },
+  "${modID}:SacrificialPlatingPower": {
+    "NAME": "Sacrificial Plating",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, gain %d Block and heal %d HP."
+    ]
+  },
+  "${modID}:DelayedTempStrengthPower": {
+    "NAME": "Rising Fury",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, gain %d temporary Strength."
+    ]
+  },
+  "${modID}:KeenSensesPower": {
+    "NAME": "Keen Senses",
+    "DESCRIPTIONS": [
+      "At the start of your turns: NL Bloodhunt (%d): draw %d card(s)."
+    ]
+  },
+  "${modID}:SacramentGoldPower": {
+    "NAME": "Sacrament",
+    "DESCRIPTIONS": [
+      "Gain %d gold whenever an enemy dies this combat."
+    ]
+  },
+  "${modID}:RallyTheTroopsPower": {
+    "NAME": "Rally the Troops",
+    "DESCRIPTIONS": [
+      "Whenever you take damage during your turn, add %d random Soldier card(s) to your hand."
+    ]
+  },
+  "${modID}:DeathMarkPower": {
+    "NAME": "Death Mark",
+    "DESCRIPTIONS": [
+      "When this enemy dies, you gain %d temporary Strength."
+    ]
+  },
+  "${modID}:CommandingPresencePower": {
+    "NAME": "Commanding Presence",
+    "DESCRIPTIONS": [
+      "At the start of each of your turns, add %d random Soldier card(s) to your hand."
+    ]
+  },
+  "${modID}:LoseThornsPower": {
+    "NAME": "Lose Thorns",
+    "DESCRIPTIONS": [
+      "Lose ",
+      " Thorns at the start of your next turn."
+    ]
+  },
+  "${modID}:DelayedBlockPower": {
+    "NAME": "Delayed Guard",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, gain %d Block."
+    ]
+  },
+  "${modID}:DelayedSelfDamagePower": {
+    "NAME": "Reckless Guard",
+    "DESCRIPTIONS": [
+      "Lose %d HP at the start of your next turn."
+    ]
+  },
+  "${modID}:DoubleImpactPower": {
+    "NAME": "Double Impact",
+    "DESCRIPTIONS": [
+      "All Attacks you play this turn are played twice.",
+      "All Attacks and Skills you play this turn are played twice."
     ]
   }
 }

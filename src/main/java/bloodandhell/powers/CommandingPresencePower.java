@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandingPresencePower extends AbstractPower {
-    public static final String POWER_ID = "bloodandhell:CommandingPresencePower";
+    public static final String POWER_ID = bloodandhell.BasicMod.makeID("CommandingPresencePower");
 
     public CommandingPresencePower(AbstractPlayer owner, int amount) {
         this.ID = POWER_ID;
@@ -33,7 +33,7 @@ public class CommandingPresencePower extends AbstractPower {
 
         // Chargement de l'image du pouvoir comme dans CollateralDamagePower
         String unPrefixed = GeneralUtils.removePrefix(POWER_ID);
-        Texture normalTexture = TextureLoader.getPowerTexture(unPrefixed);
+        Texture normalTexture = TextureLoader.getPowerTextureNull(unPrefixed);
         Texture hiDefImage = TextureLoader.getHiDefPowerTexture(unPrefixed);
 
         // Charger l'image en fonction de l'existence des images
@@ -45,6 +45,9 @@ public class CommandingPresencePower extends AbstractPower {
         } else if (normalTexture != null) {
             this.img = normalTexture;
             region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+        } else {
+            // Pas d'image custom : réutilise l'icône vanilla "minion" (thème "invoquer des troupes").
+            this.loadRegion("minion");
         }
 
         updateDescription();

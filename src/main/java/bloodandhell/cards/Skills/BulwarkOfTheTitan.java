@@ -3,11 +3,13 @@ package bloodandhell.cards.Skills;
 import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
 
 public class BulwarkOfTheTitan extends BaseCard {
     public static final String ID = makeID(BulwarkOfTheTitan.class.getSimpleName());
@@ -37,6 +39,7 @@ public class BulwarkOfTheTitan extends BaseCard {
         int blockAmount = strength * multiplier;
 
         if (blockAmount > 0) {
+            addToBot(new VFXAction(new IronWaveEffect(p.hb.cX, p.hb.cY, 1.4F), 0.2F));
             addToBot(new GainBlockAction(p, p, blockAmount));
         }
     }

@@ -12,7 +12,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DefendNow extends AbstractCard {
+// CustomCard (BaseMod) et non AbstractCard : voir StrikeNow -- AbstractCard chercherait l'image
+// dans l'atlas vanilla et retomberait sur l'illustration "beta".
+public class DefendNow extends basemod.abstracts.CustomCard {
     public static final String ID = "DefendNow";
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("DefendNow");

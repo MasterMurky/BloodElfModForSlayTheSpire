@@ -1,12 +1,12 @@
 {
-  "BLOODANDHELL:RelicID": {
+  "${modID}:RelicID": {
     "NAME": "Good Relic",
     "FLAVOR": "Flavor text displayed in detailed relic view.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
   },
-  "BLOODANDHELL:MyRelic": {
+  "${modID}:MyRelic": {
     "NAME": "My Relic",
     "FLAVOR": "I followed a tutorial and I'm proud of it!",
     "DESCRIPTIONS": [
@@ -14,7 +14,7 @@
       " #yStrength."
     ]
   },
-  "BLOODANDHELL:NearDeathWhetstone": {
+  "${modID}:NearDeathWhetstone": {
     "NAME": "Near-Death Whetstone",
     "FLAVOR": "Sharpened only by those who have looked death in the eye.",
     "DESCRIPTIONS": [
@@ -22,7 +22,7 @@
       " HP, upgrade 1 random card in your deck."
     ]
   },
-  "BLOODANDHELL:MomentumEngine": {
+  "${modID}:MomentumEngine": {
     "NAME": "Momentum Engine",
     "FLAVOR": "It never stops turning.",
     "DESCRIPTIONS": [
@@ -31,28 +31,28 @@
       " additional cards."
     ]
   },
-  "BLOODANDHELL:ParityStones": {
+  "${modID}:ParityStones": {
     "NAME": "Parity Stones",
     "FLAVOR": "Fate favors even numbers.",
     "DESCRIPTIONS": [
       "At the start of your turn, if the tens digit of your current HP is even, gain 1 energy."
     ]
   },
-  "BLOODANDHELL:EchoingBlade": {
-    "NAME": "Echoing Blade",
+  "${modID}:EchoingBlade": {
+    "NAME": "Echoing Symbol",
     "FLAVOR": "Every strike remembers the one before it.",
     "DESCRIPTIONS": [
-      "Immediately duplicate a random card in your deck."
+      "Immediately duplicate a random card in your deck (except basic Strikes and Defends)."
     ]
   },
-  "BLOODANDHELL:banner": {
+  "${modID}:banner": {
     "NAME": "Bloodstained Banner",
     "FLAVOR": "She didn't come here alone... and this proves it.",
     "DESCRIPTIONS": [
       "At the end of combat, if your HP digit in the tens place is even, one of your card rewards is upgraded. If it's odd, gain a Liquid Vitality."
     ]
   },
-  "BLOODANDHELL:SacredElixir": {
+  "${modID}:SacredElixir": {
     "NAME": "Sacred Elixir",
     "FLAVOR": "A blessing disguised as medicine.",
     "DESCRIPTIONS": [

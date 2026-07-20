@@ -129,6 +129,14 @@ public class TextureLoader {
         String textureString = powerPath(powerName + ".png");
         return getTexture(textureString);
     }
+    // getPowerTexture() above always returns a texture (missing.png as a silent fallback), so it
+    // can never be used to detect "no custom art exists" -- any code that branches on that needs
+    // this null-safe variant instead (same pattern as getHiDefPowerTexture).
+    public static Texture getPowerTextureNull(final String powerName)
+    {
+        String textureString = powerPath(powerName + ".png");
+        return getTextureNull(textureString);
+    }
     public static Texture getHiDefPowerTexture(final String powerName)
     {
         String textureString = powerPath("large/" + powerName + ".png");

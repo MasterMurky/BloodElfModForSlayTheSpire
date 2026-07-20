@@ -26,10 +26,15 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static bloodandhell.BasicMod.characterPath;
+import static bloodandhell.BasicMod.imagePath;
 import static bloodandhell.BasicMod.makeID;
 
 public class MyCharacter extends CustomPlayer {
@@ -240,5 +245,19 @@ public class MyCharacter extends CustomPlayer {
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new MyCharacter();
+    }
+
+    // Écran de fin (après avoir vaincu le Coeur) : le jeu de base n'a pas d'illustration pour un
+    // personnage custom, ces 2 hooks de CustomPlayer (BaseMod) sont prévus exactement pour ça.
+    @Override
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage(imagePath("ui/ending.png"));
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList<>();
+        panels.add(new CutscenePanel(imagePath("ui/ending.png")));
+        return panels;
     }
 }

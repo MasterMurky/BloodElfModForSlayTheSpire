@@ -1,10 +1,12 @@
 package bloodandhell.powers;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.vfx.combat.CardPoofEffect;
 
 public class CloningAction extends AbstractGameAction {
 
@@ -36,6 +38,9 @@ public class CloningAction extends AbstractGameAction {
                 AbstractCard copy = lastCard.makeStatEquivalentCopy();
                 addToBot(new MakeTempCardInHandAction(copy, 1));
             }
+            addToTop(new VFXAction(new CardPoofEffect(
+                    AbstractDungeon.player.hb.cX,
+                    AbstractDungeon.player.hb.cY)));
             // Optionnel : ajoute un effet sonore ou visuel
             addToTop(new SFXAction("CARD_OBTAIN"));
         }

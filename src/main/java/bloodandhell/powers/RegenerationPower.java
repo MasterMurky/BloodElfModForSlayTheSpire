@@ -47,7 +47,7 @@ public class RegenerationPower extends AbstractPower {
 
         if (loadImage) {
             String unPrefixed = GeneralUtils.removePrefix(id);
-            Texture normalTexture = TextureLoader.getPowerTexture(unPrefixed);
+            Texture normalTexture = TextureLoader.getPowerTextureNull(unPrefixed);
             Texture hiDefImage = TextureLoader.getHiDefPowerTexture(unPrefixed);
             if (hiDefImage != null) {
                 region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
@@ -56,11 +56,19 @@ public class RegenerationPower extends AbstractPower {
             } else if (normalTexture != null) {
                 this.img = normalTexture;
                 region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+            } else {
+                // Pas d'image custom : réutilise l'icône vanilla "regrow" (thème soin).
+                this.loadRegion("regrow");
             }
         }
 
         if (initDescription)
             this.updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = this.DESCRIPTIONS[0];
     }
 
     public void wasHPLost(DamageInfo info, int damageAmount) {

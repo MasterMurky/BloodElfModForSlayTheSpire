@@ -20,7 +20,10 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
-public class StrikeNow extends AbstractCard {
+// CustomCard (BaseMod) et non AbstractCard : le constructeur d'AbstractCard cherche le chemin
+// d'image dans l'atlas de cartes vanilla (où nos fichiers n'existent pas -> illustration "beta"
+// par défaut) ; CustomCard charge le fichier du mod depuis le disque.
+public class StrikeNow extends basemod.abstracts.CustomCard {
     public static final String ID = "StrikeNow";
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("StrikeNow");

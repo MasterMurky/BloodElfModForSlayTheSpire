@@ -77,6 +77,9 @@ public class CollateralDamagePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = this.DESCRIPTIONS[0] + this.amount + this.DESCRIPTIONS[1];
+        // DESCRIPTIONS n'a qu'une seule entrée (pas de trou %d/index[1]) : accéder à
+        // DESCRIPTIONS[1] jetait un ArrayIndexOutOfBoundsException et plantait le jeu dès que
+        // cette carte était jouée.
+        this.description = String.format(this.DESCRIPTIONS[0], this.amount);
     }
 }

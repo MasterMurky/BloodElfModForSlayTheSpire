@@ -32,7 +32,10 @@ public class Purification extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RemoveDebuffsAction(p)); // holy light, borders of the screen shining smthg like that
+        // Lumière sainte + bordures de l'écran qui brillent, comme prévu à l'origine.
+        addToBot(new VFXAction(new ShieldParticleEffect(p.hb.cX, p.hb.cY)));
+        addToBot(new VFXAction(new SpotlightPlayerEffect()));
+        addToBot(new RemoveDebuffsAction(p));
     }
 
 

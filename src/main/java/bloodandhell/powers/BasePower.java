@@ -42,7 +42,7 @@ public abstract class BasePower extends AbstractPower {
         if (loadImage)
         {
             String unPrefixed = GeneralUtils.removePrefix(id);
-            Texture normalTexture = TextureLoader.getPowerTexture(unPrefixed);
+            Texture normalTexture = TextureLoader.getPowerTextureNull(unPrefixed);
             Texture hiDefImage = TextureLoader.getHiDefPowerTexture(unPrefixed);
             if (hiDefImage != null)
             {

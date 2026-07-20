@@ -29,14 +29,14 @@ public class Bloodiness extends BaseCard {
     //but constants at the top of the file are easy to adjust.
     private static final int DAMAGE = 4;
     private static final int upg_magicNumber = 1;
-    private int HPLost = 5;
+    private static final int HPLost = 8; // Constant dans les deux versions.
 
 
     public Bloodiness() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         this.magicNumber = this.baseMagicNumber = 5;
 
-        setCustomVar("HPLost", 5, 4);
+        setCustomVar("HPLost", HPLost);
 
         setDamage(DAMAGE);
 
@@ -46,8 +46,13 @@ public class Bloodiness extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p, HPLost)); //fait perdre HPLost au joueur
-        for (int i = 1; i < this.magicNumber; i++)
+        for (int i = 1; i < this.magicNumber; i++) {
+            if (m != null)
+                addToBot(new VFXAction(new HemokinesisEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.1F));
             addToBot(new PummelDamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        }
+        if (m != null)
+            addToBot(new VFXAction(new HemokinesisEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.1F));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
@@ -62,7 +67,6 @@ public class Bloodiness extends BaseCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(upg_magicNumber); //on utilise upg_MN à la place de MG lorsque la carte est améliorée
-            //HPLost -= 1; //Diminue HPLost de 1 //abandonné, on perd tt le temps 5HP
         }
     }
 }

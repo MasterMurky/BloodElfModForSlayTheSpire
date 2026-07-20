@@ -4,12 +4,14 @@ import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 
 public class FirstStrike extends BaseCard {
     public static final String ID = makeID(FirstStrike.class.getSimpleName());
@@ -41,9 +43,11 @@ public class FirstStrike extends BaseCard {
         // Infliger les dégâts à l'ennemi
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
-        // Si l'ennemi n'est pas à plein HP, infliger des dégâts au joueur
+        // Si l'ennemi n'est pas à plein HP, infliger des dégâts au joueur : le "contrecoup" est
+        // visualisé par un jet de sang qui revient de l'ennemi vers le joueur.
         if (m != null && m.currentHealth < m.maxHealth) {
-            addToBot(new DamageAction(p, new DamageInfo(p, this.boostedSelfDamage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new VFXAction(new BloodShotEffect(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, 1), 0.2F));
+            addToBot(new DamageAction(p, new DamageInfo(p, this.boostedSelfDamage, DamageInfo.DamageType.THORNS)));
         }
     }
 

@@ -25,7 +25,7 @@ public class Bet extends BaseCard {
 
     // Constants for the magic number and its upgrade
     private static final int MN = 3; // Base amount of strength to gain
-    private static final int UPG_MN = 1; // Increment of strength when the card is upgraded
+    private static final int UPG_MN = 2; // Increment of strength when the card is upgraded (3 -> 5)
 
     public Bet() {
         super(ID, info);

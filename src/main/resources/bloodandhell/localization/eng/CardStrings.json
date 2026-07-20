@@ -4,7 +4,7 @@
     "DESCRIPTION": "Bloodhunt (15): Can be played. NL Deal !D! damage to ALL enemies. NL They lose !M! Strength.",
     "UPGRADE_DESCRIPTION": "Bloodhunt (15): Can be played. NL Deal !D! damage to ALL enemies. NL They lose !M! Strength."
   },
-  "${modID}:PainWard": {
+  "${modID}:Theophany": {
     "NAME": "Theophany",
     "DESCRIPTION": "Costs 1 less per Rampage. NL Gain !M! Buffer."
   },
@@ -15,13 +15,13 @@
   },
   "${modID}:SacrificialPlating": {
     "NAME": "Sacrificial Plating",
-    "DESCRIPTION": "Lose 8 HP. NL Gain !M! Block. NL At the start of your next turn, gain !M! Block again.",
-    "UPGRADE_DESCRIPTION": "Lose 8 HP. NL Gain !M! Block. NL At the start of your next turn, gain !M! Block again."
+    "DESCRIPTION": "Lose 8 HP. NL Gain !M! Block. NL At the start of your next turn, gain !M! Block and heal 8 HP.",
+    "UPGRADE_DESCRIPTION": "Lose 8 HP. NL Gain !M! Block. NL At the start of your next turn, gain !M! Block and heal 8 HP."
   },
   "${modID}:QuickCuts": {
     "NAME": "Quick Cuts",
     "DESCRIPTION": "Rampage (1): Costs 0. NL Deal !D! damage 3 times. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Rampage (1): Costs 0. NL Deal !D! damage 3 times. NL Draw 1 card."
+    "UPGRADE_DESCRIPTION": "Rampage (1): Costs 0. NL Deal !D! damage 5 times. NL Draw 1 card."
   },
   "${modID}:EndlessCycle": {
     "NAME": "Endless Cycle",
@@ -38,12 +38,12 @@
     "DESCRIPTION": "Costs energy equal to your Rampage. NL Heal 2 HP. NL At 1 or more, also inflict Weak 1 to ALL enemies. NL At 2 or more, also gain 13 Block. NL At 3 or more, also gain 1 Buffer.",
     "UPGRADE_DESCRIPTION": "Costs energy equal to your Rampage. NL Heal 2 HP. NL At 1 or more, also inflict Weak 2 to ALL enemies. NL At 2 or more, also gain 18 Block. NL At 3 or more, also gain 1 Buffer."
   },
-  "${modID}:DeathMark": {
+  "${modID}:Anathema": {
     "NAME": "Anathema",
     "DESCRIPTION": "Enemy loses 3 Strength this turn. NL When it dies, gain 5 temporary Strength.",
     "UPGRADE_DESCRIPTION": "Enemy loses 4 Strength this turn. NL When it dies, gain 6 temporary Strength."
   },
-  "${modID}:WrathSurge": {
+  "${modID}:ControlledWrath": {
     "NAME": "Controlled Wrath",
     "DESCRIPTION": "At the start of your next turn, gain X temporary Strength. NL X is equal to 3 times the energy spent.",
     "UPGRADE_DESCRIPTION": "At the start of your next turn, gain X temporary Strength. NL X is equal to 4 times the energy spent."
@@ -51,11 +51,12 @@
   "${modID}:BloodToll": {
     "NAME": "Blood Toll",
     "DESCRIPTION": "Draw 5 cards. NL Gain temporary Strength and Block equal to the combined cost of the drawn cards.",
-    "UPGRADE_DESCRIPTION": "Draw 5 cards. NL Gain temporary Strength and Block equal to the combined cost of the drawn cards. NL Reduce the cost of the drawn cards by 1 for the rest of combat."
+    "UPGRADE_DESCRIPTION": "Draw 7 cards. NL Gain temporary Strength and Block equal to the combined cost of the drawn cards."
   },
   "${modID}:BootCamp": {
     "NAME": "Boot Camp",
-    "DESCRIPTION": "All Soldier cards are upgraded, wherever they are."
+    "DESCRIPTION": "All Soldier cards are upgraded, wherever they are.",
+    "UPGRADE_DESCRIPTION": "Innate. NL All Soldier cards are upgraded, wherever they are."
   },
   "${modID}:RallyTheTroops": {
     "NAME": "Rally the Troops",
@@ -81,7 +82,7 @@
     "DESCRIPTION": "Lose 3 HP. NL Bloodhunt (10): Heal !M! HP.",
     "UPGRADE_DESCRIPTION": "Lose 3 HP. NL Bloodhunt (10): Heal !M! HP."
   },
-  "${modID}:UnfinishedBusiness": {
+  "${modID}:Scavenger": {
     "NAME": "Scavenger",
     "DESCRIPTION": "Lose 1 HP. NL Put a card from your exhaust pile into your hand. NL Exhaust."
   },
@@ -159,7 +160,8 @@
   },
   "${modID}:BloodyArmor": {
     "NAME": "Bloody Armor",
-    "DESCRIPTION": "Lose 1 HP. Gain 5 Block. Do these actions !M! times."
+    "DESCRIPTION": "Lose 1 HP. Gain 5 Block. NL Rampage (2): replay this card.",
+    "UPGRADE_DESCRIPTION": "Lose 1 HP. Gain 5 Block. Do this twice. NL Rampage (3): Do it a third time."
   },
   "${modID}:ColdBlood": {
     "NAME": "Cold Blood",
@@ -205,11 +207,24 @@
     "NAME": "Choice",
     "DESCRIPTION": "Choose: Deal !D! damage to a random enemy or Gain !B! Block."
   },
-  "${modID}:StrikeNow": {
+  "${modID}:Foresight": {
+    "NAME": "Foresight",
+    "DESCRIPTION": "Choose: Lose 5 HP. Gain 13 Block next turn. NL Or Gain 13 Block. Lose 5 HP next turn.",
+    "UPGRADE_DESCRIPTION": "Choose: Lose 5 HP. Gain 16 Block next turn. NL Or Gain 16 Block. Lose 5 HP next turn."
+  },
+  "DelayedGuard": {
+    "NAME": "Delayed Guard",
+    "DESCRIPTION": "Lose 5 HP. NL At the start of your next turn, gain !M! Block."
+  },
+  "RecklessGuard": {
+    "NAME": "Reckless Guard",
+    "DESCRIPTION": "Gain !M! Block. NL At the start of your next turn, lose 5 HP."
+  },
+  "StrikeNow": {
     "NAME": "Strike Now",
     "DESCRIPTION": "Deal !M! damage to a random enemy."
   },
-  "${modID}:DefendNow": {
+  "DefendNow": {
     "NAME": "Defend Now",
     "DESCRIPTION": "Gain !M! Block."
   },
@@ -242,8 +257,8 @@
   },
   "${modID}:Avarice": {
     "NAME": "Avarice",
-    "DESCRIPTION": "Lose 1 HP, Heal !M! HP, Gain 1 [E], X times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose 1 HP, Heal !M! HP, Gain 1 [E], X+1 times. NL Exhaust."
+    "DESCRIPTION": "Lose 1 HP, Heal !M! HP, Gain 1 [E]. NL Repeat X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose 1 HP, Heal !M! HP, Gain 1 [E]. NL Repeat X+1 times. NL Exhaust."
   },
   "${modID}:Correction": {
     "NAME": "Correction",
@@ -317,8 +332,8 @@
   },
   "${modID}:ExecutionStrike": {
     "NAME": "Execution Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal !BD! damage instead.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal !BD! damage instead."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal damage equal to its current HP instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy is at !M! HP or below, deal damage equal to its current HP instead."
   },
   "${modID}:FirstStrike": {
     "NAME": "First Strike",
@@ -367,7 +382,7 @@
     "NAME": "Catharsis",
     "DESCRIPTION": "Reset your Strength and Dexterity modifiers to 0."
   },
-  "${modID}:RejuvenatingBreath": {
+  "${modID}:VitalBreath": {
     "NAME": "Vital Breath",
     "DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "This card costs the number of units of your HP. NL Heal !M! HP. Gain !B! Block. NL Exhaust."
@@ -380,13 +395,5 @@
   "${modID}:Sacrament": {
     "NAME": "Sacrament",
     "DESCRIPTION": "Gain !M! Gold. Gain 5 more Gold whenever an enemy dies this combat."
-  },
-  "${modID}:Energy": {
-    "NAME": "Energy",
-    "DESCRIPTION": "[TEST] Gain 20 Energy."
-  },
-  "${modID}:Damage": {
-    "NAME": "Damage",
-    "DESCRIPTION": "[TEST] Lose 20 HP."
   }
 }

@@ -14,7 +14,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class DoubleImpactPower extends AbstractPower {
-    public static final String POWER_ID = "DoubleImpact";
+    // Distinct de la carte "DoubleImpact" : un ID de pouvoir prefixé par modID est requis pour que
+    // getPowerStrings() trouve son entrée dans PowerStrings.json (l'ancien ID nu "DoubleImpact"
+    // ne correspondait à rien -> nom/description cassés en jeu).
+    public static final String POWER_ID = bloodandhell.BasicMod.makeID("DoubleImpactPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

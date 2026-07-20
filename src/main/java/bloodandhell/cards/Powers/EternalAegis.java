@@ -25,16 +25,11 @@ public class EternalAegis extends BaseCard {
             2 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    private static final int upg_magicNumber = 1; //l'UPG du MN va ici mais le MN va dans la méthode juste en dessous
-
-
     public EternalAegis() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         this.magicNumber = this.baseMagicNumber = 2;
-        setCustomVar("HPLost", 7, -2); //Setting a custom variable with a base value of 7, decrease by 2 on upgrade
-
-
+        setCustomVar("HPLost", 7, -3); // Base 7 PV, upgraded: 4 PV. Le nombre de Tampon ne change pas à l'amélioration.
     }
 
     @Override
@@ -51,8 +46,7 @@ public class EternalAegis extends BaseCard {
 
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeMagicNumber(upg_magicNumber); //on utilise upg_MN à la place de MG lorsque la carte est améliorée
-            super.upgrade(); // Applique aussi la baisse du coût en PV (HPLost: 7 -> 5).
+            super.upgrade(); // Applique la baisse du coût en PV (HPLost: 7 -> 4). Pas de 3e Tampon.
         }
     }
 }

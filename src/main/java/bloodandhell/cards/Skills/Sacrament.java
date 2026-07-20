@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
+import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 
 public class Sacrament extends BaseCard {
     public static final String ID = makeID(Sacrament.class.getSimpleName());
@@ -29,10 +31,16 @@ public class Sacrament extends BaseCard {
     public Sacrament() {
         super(ID, info);
         setMagic(GOLD_GAIN, UPG_GOLD_GAIN);
+        setExhaust(true);
+        setEthereal(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Pluie d'or sur le joueur, comme All-In-One.
+        AbstractDungeon.effectList.add(new RainingGoldEffect(10 * 2, true));
+        AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
+
         // Gain immédiat
         addToBot(new GainGoldAction(this.magicNumber));
 

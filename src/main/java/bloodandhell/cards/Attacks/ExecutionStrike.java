@@ -4,12 +4,14 @@ import bloodandhell.cards.BaseCard;
 import bloodandhell.character.MyCharacter;
 import bloodandhell.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
 public class ExecutionStrike extends BaseCard {
     public static final String ID = makeID(ExecutionStrike.class.getSimpleName());
@@ -25,27 +27,24 @@ public class ExecutionStrike extends BaseCard {
     private static final int UPG_DAMAGE = 1;
 
     private static final int EXEC_THRESHOLD = 20;
-    private static final int UPG_EXEC_THRESHOLD = 10;
-
-    private static final int BOOSTED_DAMAGES = 18;
-    private static final int UPG_BOOSTED_DAMAGES = 27;
-
-    private int boostedDamage;
+    private static final int UPG_EXEC_THRESHOLD = 5; // 20 -> 25
 
     public ExecutionStrike() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(EXEC_THRESHOLD, UPG_EXEC_THRESHOLD);
-        this.boostedDamage = BOOSTED_DAMAGES;
-        updateDescription(false);
         tags.add(CardTags.STRIKE); //This tag marks it as a Strike card for the purposes of Perfected Strike and any similar modded effects
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int finalDamage = this.damage;
-        if (m != null && m.currentHealth <= this.magicNumber) {
-            finalDamage = this.boostedDamage;
+        boolean isExecution = m != null && m.currentHealth <= this.magicNumber;
+        // Exécution nette : dégâts égaux aux PV actuels de la cible (ni gâchis, ni PV restants),
+        // dans les deux versions de la carte.
+        int finalDamage = isExecution ? m.currentHealth : this.damage;
+        if (isExecution) {
+            // Vend visuellement l'exécution quand le seuil est atteint.
+            addToBot(new VFXAction(new DieDieDieEffect(), 0.2F));
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
@@ -57,19 +56,9 @@ public class ExecutionStrike extends BaseCard {
             upgradeName();
             upgradeDamage(UPG_DAMAGE);
             upgradeMagicNumber(UPG_EXEC_THRESHOLD);
-            this.boostedDamage = UPG_BOOSTED_DAMAGES;
-            updateDescription(true);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
-    }
-
-    private void updateDescription(boolean upgraded) {
-        String baseDesc = cardStrings.DESCRIPTION;
-        if (upgraded) {
-            baseDesc = cardStrings.UPGRADE_DESCRIPTION;
-        }
-
-        this.rawDescription = baseDesc.replace("!BD!", String.valueOf(this.boostedDamage));
-        initializeDescription();
     }
 
     @Override
