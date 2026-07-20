@@ -4,6 +4,8 @@ A fan-made custom character mod for **Slay the Spire** (base game by [Mega Crit]
 
 The **Blood Elf** is a new character introducing a playstyle centered around hemomancy: the manipulation of **blood** as a powerful magical resource. 🧙
 
+> 🎮 The mod is available on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3768529663)
+
 ## Features
 
 - 🩸 1 new playable character: **The Blood Elf**
@@ -12,8 +14,6 @@ The **Blood Elf** is a new character introducing a playstyle centered around hem
 - 🧪 3 potions
 - 🌐 Fully localized in **English** and **French**
 - ✨ Custom animations, visual effects, and artwork
-
-> 🎮 The mod is available on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3768529663)
 
 ---
 
