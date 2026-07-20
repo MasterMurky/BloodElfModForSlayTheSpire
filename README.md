@@ -13,25 +13,14 @@ The **Blood Elf** is a new character introducing a playstyle centered around hem
 - 🌐 Fully localized in **English** and **French**
 - ✨ Custom animations, visual effects, and artwork
 
-> The mod will be available on the Steam Workshop. A link will be added once it is released.
+> 🎮 The mod is available on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3768529663)
 
 ---
 
 ## Screenshots
 
 <!--
-Drop your screenshots into a "screenshots/" folder at the repo root and update the
-paths below to match your filenames. Suggested shots (feel free to swap any of these):
-
-1. Character selection screen
-2. A few cards from the compendium (showing off the full card pool)
-3. In combat, showing the character model/animations in action
-4. The same cards as #2, but with the game set to French, to show off the localization
-5. (suggestion) A combat moment where a signature mechanic fires -- e.g. playing a
-   self-damage card and seeing the Hémomancie/Saignée counter, or a Tampon (Buffer)
-   proc -- this sells the actual playstyle, not just the art
-6. (suggestion) A relic tooltip on hover, to show off the relic art + descriptions
-7. (suggestion) A card before/after upgrade, to show the upgrade system clearly
+On the "screenshots/" folder at the repo root
 -->
 
 |                      |                                                       |
