@@ -242,9 +242,13 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCards() {
+        // setDefaultSeen(true) marquait TOUTES les cartes comme déjà vues, ce qui masquait
+        // l'effet de verrou/chaîne vanilla dans le compendium pour les cartes pas encore
+        // débloquées (le système de paliers de bloodandhell.util.CardUnlockManager). Sans ça,
+        // les cartes suivent le suivi "vu" normal du jeu : verrouillées tant qu'elles n'ont pas
+        // été effectivement rencontrées/débloquées.
         new AutoAdd(modID) //Loads files from this mod
                 .packageFilter(BaseCard.class) //In the same package as this class
-                .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
     }
 

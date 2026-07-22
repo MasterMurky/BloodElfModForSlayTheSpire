@@ -1,11 +1,8 @@
 package bloodandhell.powers;
 
 import bloodandhell.BasicMod;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,10 +16,14 @@ public class DefendNow extends basemod.abstracts.CustomCard {
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("DefendNow");
 
+    private static final int BLOCK = 8;
+    private static final int UPG_BLOCK = 3;
+
     public DefendNow() {
         super("DefendNow", cardStrings.NAME, BasicMod.imagePath("cards/skill/Defend.png"), -2, cardStrings.DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-        this.baseMagicNumber = 8;
-        this.magicNumber = this.baseMagicNumber;
+        // CustomCard n'a pas l'équivalent setBlock(base, upgrade) de BaseCard : on initialise les
+        // champs à la main, upgradeBlock() (AbstractCard) gère bien le delta à l'amélioration.
+        this.baseBlock = this.block = BLOCK;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -31,14 +32,15 @@ public class DefendNow extends basemod.abstracts.CustomCard {
 
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new GainBlockAction(p, p, this.magicNumber));
-            }
+        // Même raison que StrikeNow : force le recalcul de this.block via la Dextérité actuelle.
+        this.applyPowers();
+        addToBot(new GainBlockAction(p, p, this.block));
+    }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(3);
-
+            upgradeBlock(UPG_BLOCK);
         }
     }
 

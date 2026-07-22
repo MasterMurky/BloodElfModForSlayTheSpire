@@ -11,7 +11,9 @@ import bloodandhell.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
@@ -67,10 +69,17 @@ public class ArmyOfSoldiers extends BaseCard {
     public List<TooltipInfo> getCustomTooltips() {
         if (tips == null) {
             tips = new ArrayList<>();
-            tips.add(new TooltipInfo("Soldier Strike", "Deal 5 damage. Exhaust."));
-            tips.add(new TooltipInfo("Soldier Defend", "Gain 3 Block. Exhaust."));
-            tips.add(new TooltipInfo("Soldier Devotion", "Draw 1 card. Exhaust."));
+            addTip(tips, SoldierStrike.ID);
+            addTip(tips, SoldierDefend.ID);
+            addTip(tips, SoldierDevotion.ID);
         }
         return tips;
+    }
+
+    private static void addTip(List<TooltipInfo> tips, String cardID) {
+        // Ces 3 tooltips étaient codées en dur en anglais alors que CardStrings.json a déjà la
+        // traduction FR (SoldierStrike/SoldierDefend/SoldierDevotion) -- on la réutilise ici.
+        CardStrings strings = CardCrawlGame.languagePack.getCardStrings(cardID);
+        tips.add(new TooltipInfo(strings.NAME, strings.DESCRIPTION));
     }
 }

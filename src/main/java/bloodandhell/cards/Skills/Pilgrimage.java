@@ -16,7 +16,7 @@ public class Pilgrimage extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            1
+            2
     );
 
     public Pilgrimage() {
@@ -26,17 +26,16 @@ public class Pilgrimage extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // PilgrimagePower removes debuffs the first time its atEndOfTurn fires with amount==1.
-        // Starting at 2 turns means: end of THIS turn -> amount 2->1 (no removal yet), end of
-        // NEXT turn -> amount==1 -> removal fires. Starting at 1 would remove debuffs at the
-        // end of the same turn Pilgrimage was played, one turn too early.
-        addToBot(new ApplyPowerAction(p, p, new PilgrimagePower(p, 2), 2));
+        // PilgrimagePower ignore elle-même le tour où elle est appliquée (voir son propre
+        // commentaire) : amount=3 retire donc bien les malus à la fin de chacun des 3 prochains
+        // tours, pas de celui-ci.
+        addToBot(new ApplyPowerAction(p, p, new PilgrimagePower(p, 3), 3));
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0); // Réduire le coût à 0 une fois amélioré
+            upgradeBaseCost(1);
         }
     }
 

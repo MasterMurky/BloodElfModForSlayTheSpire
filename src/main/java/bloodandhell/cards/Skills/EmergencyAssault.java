@@ -40,9 +40,13 @@ public class EmergencyAssault extends BaseCard {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard();
-                    if (topCard != null && upgraded && topCard.canUpgrade() && !topCard.upgraded) {
-                        topCard.upgrade();
+                    // getTopCard() plante si la pioche est vide -- ne la lire que si elle contient
+                    // encore au moins une carte.
+                    if (!AbstractDungeon.player.drawPile.isEmpty()) {
+                        AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard();
+                        if (upgraded && topCard.canUpgrade() && !topCard.upgraded) {
+                            topCard.upgrade();
+                        }
                     }
                     this.isDone = true;
                 }

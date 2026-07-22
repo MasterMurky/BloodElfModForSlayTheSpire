@@ -46,8 +46,12 @@ public class Riptide extends BaseCard {
 
         for (int i = 0; i < this.magicNumber; i++) {
             addToBot(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
+            // DamageAllEnemiesAction(owner, baseDamage, ...) reconstruit lui-même un DamageInfo
+            // par ennemi via DamageInfo.createDamageMatrix(), qui réapplique Force/Faiblesse à
+            // partir de ce "baseDamage" -- lui passer this.damage (déjà calculé avec Faiblesse
+            // par calculateCardDamage()) l'appliquait deux fois, d'où le 0 au lieu de 1 sous Faible.
             addToBot(new DamageAllEnemiesAction(
-                    p, this.damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE
+                    p, this.baseDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE
             ));
         }
     }

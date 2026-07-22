@@ -31,19 +31,21 @@ public class Assault extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard(); // Récupère la carte du dessus de la pile
-
-        if (topCard != null) {
-            // Si Assault est améliorée et la carte du dessus peut être améliorée
+        // getTopCard() plante (IndexOutOfBoundsException) si la pioche est vide -- on ne peut donc
+        // le lire que si elle contient encore au moins une carte. Si la pioche est vide,
+        // PlayTopCardAction gère déjà tout seul le rebrassage de la défausse (ou l'absence totale
+        // de carte à jouer) ; on ne peut simplement pas savoir/améliorer la carte à l'avance.
+        if (!AbstractDungeon.player.drawPile.isEmpty()) {
+            AbstractCard topCard = AbstractDungeon.player.drawPile.getTopCard();
             if (this.upgraded && topCard.canUpgrade() && !topCard.upgraded) {
                 addToBot(new UpgradeAndPlayCardAction(topCard)); // Ajoute une action qui améliore puis joue la carte
-            } else {
-                // Si pas besoin d'améliorer, on joue directement
-                addToBot(new PlayTopCardAction(
-                        AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false
-                ));
+                return;
             }
         }
+        // Si pas besoin d'améliorer (ou pioche vide), on joue directement
+        addToBot(new PlayTopCardAction(
+                AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false
+        ));
     }
 
     @Override

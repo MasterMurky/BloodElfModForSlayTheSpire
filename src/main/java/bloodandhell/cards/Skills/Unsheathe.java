@@ -23,7 +23,8 @@ public class Unsheathe extends BaseCard {
             1
     );
 
-    private static final int UPGRADE_BONUS_STRENGTH = 1;
+    private static final int BASE_MULTIPLIER = 2;
+    private static final int UPGRADE_MULTIPLIER = 3;
 
     public Unsheathe() {
         super(ID, info);
@@ -42,12 +43,8 @@ public class Unsheathe extends BaseCard {
                 AbstractCard drawnCard = AbstractDungeon.player.hand.getTopCard();
                 int cardCost = drawnCard.costForTurn;
 
-                int strengthToApply = cardCost;
-
-                // *2 if Upgraded
-                if (Unsheathe.this.upgraded) {
-                    strengthToApply = strengthToApply*2;
-                }
+                int multiplier = Unsheathe.this.upgraded ? UPGRADE_MULTIPLIER : BASE_MULTIPLIER;
+                int strengthToApply = cardCost * multiplier;
 
                 if (cardCost > 0) {
                     addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strengthToApply), strengthToApply));

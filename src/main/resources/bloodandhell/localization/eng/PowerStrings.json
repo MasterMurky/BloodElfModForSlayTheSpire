@@ -63,9 +63,8 @@
   "${modID}:pilgrimagePower": {
     "NAME": "Pilgrimage",
     "DESCRIPTIONS": [
-      "Remove all debuffs in ",
-      "Remove all debuffs at the end of this turn.",
-      " turn(s)."
+      "Removes all your debuffs at the end of your turn. NL Lasts ",
+      " turns."
     ]
   },
   "${modID}:BootCampPower": {

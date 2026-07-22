@@ -11,7 +11,7 @@
   "${modID}:BloodhuntsEnd": {
     "NAME": "Bloodhunt's End",
     "DESCRIPTION": "Costs 1 less per Bloodhunt. NL Deal damage equal to your Bloodhunt. NL Apply !M! Vulnerable.",
-    "UPGRADE_DESCRIPTION": "Costs 1 less per Bloodhunt. NL Deal damage equal to your Bloodhunt. NL Apply !M! Vulnerable. NL Retain."
+    "UPGRADE_DESCRIPTION": "Retain. NL Costs 1 less per Bloodhunt. NL Deal damage equal to your Bloodhunt. NL Apply !M! Vulnerable."
   },
   "${modID}:SacrificialPlating": {
     "NAME": "Sacrificial Plating",
@@ -222,11 +222,11 @@
   },
   "StrikeNow": {
     "NAME": "Strike Now",
-    "DESCRIPTION": "Deal !M! damage to a random enemy."
+    "DESCRIPTION": "Deal !D! damage to a random enemy."
   },
   "DefendNow": {
     "NAME": "Defend Now",
-    "DESCRIPTION": "Gain !M! Block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "${modID}:Cloning": {
     "NAME": "Cloning",
@@ -234,8 +234,8 @@
   },
   "${modID}:Unsheathe": {
     "NAME": "Unsheathe",
-    "DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as its cost.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain as much temporary Strength as 2 times its cost."
+    "DESCRIPTION": "Draw 1 card. Gain temporary Strength equal to twice its cost.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain temporary Strength equal to 3 times its cost."
   },
   "${modID}:Bet": {
     "NAME": "Bet",
@@ -288,7 +288,7 @@
   },
   "${modID}:Pilgrimage": {
     "NAME": "Pilgrimage",
-    "DESCRIPTION": "Remove all Debuffs at the end of your next turn. NL Exhaust."
+    "DESCRIPTION": "Remove all Debuffs at the end of each of your next 3 turns. NL Exhaust."
   },
   "${modID}:WarTactics": {
     "NAME": "War Tactics",
@@ -395,5 +395,10 @@
   "${modID}:Sacrament": {
     "NAME": "Sacrament",
     "DESCRIPTION": "Gain !M! Gold. Gain 5 more Gold whenever an enemy dies this combat."
+  },
+  "${modID}:DarkRitual": {
+    "NAME": "Dark Ritual",
+    "DESCRIPTION": "Lose 10 HP. NL Gain !M! Ritual.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Lose 10 HP. NL Gain !M! Ritual."
   }
 }

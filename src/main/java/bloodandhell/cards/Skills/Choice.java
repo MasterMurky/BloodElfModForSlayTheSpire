@@ -52,6 +52,11 @@ public class Choice extends BaseCard {
         if (this.upgraded)
             for (AbstractCard c : stanceChoices)
                 c.upgrade();
+        // ChooseOneAction affiche ces cartes directement, sans jamais passer par
+        // hand.applyPowers() : sans ce recalcul explicite, le nombre affiché sur l'écran de choix
+        // lui-même restait figé à sa valeur de base, avant même que le joueur ait choisi.
+        for (AbstractCard c : stanceChoices)
+            c.applyPowers();
         addToBot((AbstractGameAction)new ChooseOneAction(stanceChoices));
     }
 
